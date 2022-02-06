@@ -153,6 +153,30 @@ bitset/bitset.c.s:
 	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/bitset/bitset.c.s
 .PHONY : bitset/bitset.c.s
 
+vector/vector.obj: vector/vector.c.obj
+.PHONY : vector/vector.obj
+
+# target to build an object file
+vector/vector.c.obj:
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/vector/vector.c.obj
+.PHONY : vector/vector.c.obj
+
+vector/vector.i: vector/vector.c.i
+.PHONY : vector/vector.i
+
+# target to preprocess a source file
+vector/vector.c.i:
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/vector/vector.c.i
+.PHONY : vector/vector.c.i
+
+vector/vector.s: vector/vector.c.s
+.PHONY : vector/vector.s
+
+# target to generate assembly for a file
+vector/vector.c.s:
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/vector/vector.c.s
+.PHONY : vector/vector.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -165,6 +189,9 @@ help:
 	@echo ... bitset/bitset.obj
 	@echo ... bitset/bitset.i
 	@echo ... bitset/bitset.s
+	@echo ... vector/vector.obj
+	@echo ... vector/vector.i
+	@echo ... vector/vector.s
 .PHONY : help
 
 

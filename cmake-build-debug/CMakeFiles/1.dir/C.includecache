@@ -6,29 +6,15 @@
 
 #IncludeRegexTransform: 
 
-C:/C/git bash/1/libs/algorithms/array/array.h
-stddef.h
--
-
-C:/C/git bash/1/libs/algorithms/array/unordered_array.h
-stdint.h
--
-assert.h
--
-memory.h
--
+C:/C/git bash/1/libs/data_structures/vector/vector.h
 stdio.h
 -
-stdbool.h
--
-malloc.h
--
-stdlib.h
--
-../../algorithms/array/array.h
-C:/C/git bash/1/libs/algorithms/array/array.h
 
 C:/C/git bash/1/main.c
-libs/algorithms/array/unordered_array.h
-C:/C/git bash/1/libs/algorithms/array/unordered_array.h
+stdio.h
+-
+stdint.h
+-
+libs/data_structures/vector/vector.h
+C:/C/git bash/1/libs/data_structures/vector/vector.h
 

@@ -6,19 +6,15 @@
 
 #IncludeRegexTransform: 
 
-C:/C/git bash/1/libs/data_structures/bitset/bitset.c
-bitset.h
-C:/C/git bash/1/libs/data_structures/bitset/bitset.h
-stdio.h
+C:/C/git bash/1/libs/data_structures/vector/vector.c
+vector.h
+C:/C/git bash/1/libs/data_structures/vector/vector.h
+stdlib.h
 -
-assert.h
--
-stdbool.h
+malloc.h
 -
 
-C:/C/git bash/1/libs/data_structures/bitset/bitset.h
-stdint.h
--
-stdbool.h
+C:/C/git bash/1/libs/data_structures/vector/vector.h
+stdio.h
 -
 
