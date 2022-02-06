@@ -3,16 +3,25 @@
 #include <malloc.h>
 
 vector createVector(size_t n) {
-    return (vector) {(int *)malloc(sizeof(int) * n), 0, n};
+    if(n > SIZE_MAX) {
+        fprintf(stderr,"bad alloc");
+        exit(1);
+    }
+    return (vector) {(int *) malloc(sizeof(int) * n), 0, n};
 }
 
 void reserve(vector *v, size_t newCapacity) {
-    v->capacity = newCapacity;
-    if(newCapacity == 0) {
+    if(newCapacity > SIZE_MAX) {
+        fprintf(stderr,"bad alloc");
+        exit(1);
+    }
+    if (newCapacity == 0) {
         v->data = NULL;
         v->size = 0;
-    } else if(newCapacity < v->size) {
+        v->capacity = newCapacity;
+    } else if (newCapacity < v->size) {
         v->size = newCapacity;
+        v->capacity = newCapacity;
     }
 }
 
@@ -25,7 +34,8 @@ void shrinkToFit(vector *v) {
 }
 
 void deleteVector(vector *v) {
-    v->size = 0;
-    v->capacity = 0;
-    free(v->data);
+    free(v);
 }
+
+
+

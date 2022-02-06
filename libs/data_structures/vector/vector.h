@@ -2,6 +2,7 @@
 #define INC_1_VECTOR_H
 
 #include <stdio.h>
+#include <stdbool.h>
 
 typedef struct vector {
     int *data; // указатель на элементы вектора
@@ -26,6 +27,5 @@ void shrinkToFit(vector *v);
 
 // освобождает память, выделенную вектору v
 void deleteVector(vector *v);
-
 
 #endif //INC_1_VECTOR_H
