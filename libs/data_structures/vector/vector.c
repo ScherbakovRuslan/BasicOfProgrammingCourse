@@ -54,7 +54,7 @@ void pushBack(vector *v, int x) {
         reserve(v, v->capacity * 2);
     }
     v->data[v->size] = x;
-    v->size += 1;
+    v->size++;
 }
 
 void popBack(vector *v) {
@@ -62,7 +62,7 @@ void popBack(vector *v) {
         fprintf(stderr, "vector is empty");
         exit(1);
     } else {
-        v->size -= 1;
+        v->size--;
     }
 }
 
