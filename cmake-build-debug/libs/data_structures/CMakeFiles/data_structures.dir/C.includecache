@@ -17,4 +17,6 @@ malloc.h
 C:/C/git bash/1/libs/data_structures/vector/vector.h
 stdio.h
 -
+stdbool.h
+-
 
