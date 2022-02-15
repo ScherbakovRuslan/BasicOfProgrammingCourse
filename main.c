@@ -263,6 +263,61 @@ void test_task6() {
     assert(task6(m1, m2) == true);
 }
 
+int max(int a, int b) {
+    return a > b ? a : b;
+}
+
+long long findSumOfMaxesOfPseudoDiagonal(matrix m) {
+    int sum = 0;
+    for(int i = 1; i < m.nRows; i++) {
+        int rIndex = i;
+        int cIndex = 0;
+        int maxElement = m.values[rIndex][cIndex];
+        while (cIndex < m.nCols &&  rIndex < m.nRows) {
+            if(m.values[rIndex][cIndex] > maxElement) {
+                maxElement = m.values[rIndex][cIndex];
+            }
+            cIndex++;
+            rIndex++;
+        }
+
+        sum += maxElement;
+    }
+
+    for (int i = 1; i < m.nCols; i++) {
+        int rIndex = 0;
+        int cIndex = i;
+        int maxElement = m.values[rIndex][cIndex];
+        while (cIndex < m.nCols && rIndex < m.nRows) {
+            if (m.values[rIndex][cIndex] > maxElement) {
+                maxElement = m.values[rIndex][cIndex];
+            }
+            cIndex++;
+            rIndex++;
+        }
+        sum += maxElement;
+    }
+
+    return sum;
+}
+
+long long task7(matrix m) {
+    return findSumOfMaxesOfPseudoDiagonal(m);
+}
+
+void test_task7() {
+    matrix m = createMatrixFromArray((int[]) {3, 2, 5, 4,
+                                              1, 3, 6, 3,
+                                              3, 2, 1, 2}, 3, 4);
+    long long res = task7(m);
+
+    assert(res == 20);
+}
+
+int getMinInArea(matrix m) {
+
+}
+
 int main() {
     test_task1_CommonCase();
     test_task1_minAndMaxInOneLine();
@@ -271,6 +326,7 @@ int main() {
     test_task4();
     test_task5();
     test_task6();
+    test_task7();
 
     return 0;
 }
