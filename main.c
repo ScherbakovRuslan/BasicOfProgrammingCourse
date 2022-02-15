@@ -315,7 +315,46 @@ void test_task7() {
 }
 
 int getMinInArea(matrix m) {
+    position posMaxElement = getMaxValuePos(m);
 
+    int rIndex = posMaxElement.rowIndex;
+
+    int lCol = posMaxElement.colIndex;
+    int rCol = posMaxElement.colIndex;
+
+    int min = m.values[posMaxElement.rowIndex][posMaxElement.colIndex];
+    while (rIndex >= 0) {
+        int i = lCol;
+        while (i < rCol) {
+            if(m.values[rIndex][i] < min) {
+                min = m.values[rIndex][i];
+            }
+            i++;
+        }
+
+        if(lCol > 0) {
+            lCol--;
+        }
+        if(rCol + 1 < m.nCols) {
+            rCol++;
+        }
+        rIndex--;
+    }
+
+    return min;
+}
+
+int task8(matrix m) {
+    return getMinInArea(m);
+}
+
+void test_task8() {
+    matrix m = createMatrixFromArray((int[]) {10, 7, 5, 6,
+                                              3, 11, 8, 9,
+                                              4, 1, 12, 2}, 3, 4);
+    long long res = task8(m);
+
+    assert(res == 5);
 }
 
 int main() {
@@ -327,6 +366,7 @@ int main() {
     test_task5();
     test_task6();
     test_task7();
+    test_task8();
 
     return 0;
 }
