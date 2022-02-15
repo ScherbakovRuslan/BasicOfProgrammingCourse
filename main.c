@@ -242,6 +242,27 @@ void test_task5() {
     assert(areTwoMatricesEqual(res, m));
 }
 
+bool isMutuallyInverseMatrices(matrix m1, matrix m2) {
+    if(isEMatrix(mulMatrices(m1, m2))) {
+        return true;
+    }
+
+    return false;
+}
+
+bool task6(matrix m1, matrix  m2) {
+    return isMutuallyInverseMatrices(m1, m2);
+}
+
+void test_task6() {
+    matrix m1 = createMatrixFromArray((int[]) {1, 2,
+                                               2, 3}, 2, 2);
+    matrix m2 = createMatrixFromArray((int[]) {-3, 2,
+                                               2, -1}, 2, 2);
+
+    assert(task6(m1, m2) == true);
+}
+
 int main() {
     test_task1_CommonCase();
     test_task1_minAndMaxInOneLine();
@@ -249,6 +270,7 @@ int main() {
     test_task3();
     test_task4();
     test_task5();
+    test_task6();
 
     return 0;
 }
