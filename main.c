@@ -62,7 +62,20 @@ void test_front_oneElementInVector() {
 }
 
 int main() {
-    test_matrix();
+    int rows;
+    scanf("%d", &rows);
+
+    int cols;
+    scanf("%d", &cols);
+
+    matrix m = getMemMatrix(rows, cols);
+
+    inputMatrix(m);
+
+    position max = getMaxValuePos(m);
+    position min = getMaxValuePos(m);
+
+    swapRows(m, max.rowIndex, min.colIndex);
 
     return 0;
 }
