@@ -3,8 +3,9 @@
 #include "libs/data_structures/vector/vector.h"
 #include "libs/data_structures/matrix/matrix.h"
 #include "libs/data_structures/matrix/matrixTest.h"
-
+#include "libs/algorithms/algorithm.h"
 #include <assert.h>
+#include <malloc.h>
 
 void test_pushBack_emptyVector() {
     vector v = createVector(3);
@@ -92,9 +93,55 @@ void test_task1_minAndMaxInOneLine() {
     assert(areTwoMatricesEqual(res, m));
 }
 
+int getMax(int *a, int n) {
+    int max = a[0];
+    for(int i = 1; i < n; i++) {
+        if(a[i] > max) {
+            max = a[i];
+        }
+    }
+
+    return max;
+}
+
+void sortRowsByMaxElement(matrix m) {
+    int *rows = (int *) malloc(sizeof(int) * m.nRows);
+    for (int i = 0; i < m.nRows; i++) {
+        rows[i] = getMax(m.values[i], m.nCols);
+    }
+
+    for (int i = 1; i < m.nRows; i++) {
+        int j = i;
+        while (j > 0 && rows[j - 1] > rows[j]) {
+            swapRows(m, j, j - 1);
+            universalSwap(&rows[j], &rows[j - 1], sizeof(int));
+            j--;
+        }
+    }
+
+    free(rows);
+}
+
+void task2(matrix m) {
+    sortRowsByMaxElement(m);
+}
+
+void test_task2() {
+    matrix m = createMatrixFromArray((int[]) {7, 1, 2,
+                                              1, 8, 1,
+                                              3, 2, 3}, 3, 3);
+    matrix res = createMatrixFromArray((int[]) {3, 2, 3,
+                                                7, 1, 2,
+                                                1, 8, 1}, 3, 3);
+    task2(m);
+
+    assert(areTwoMatricesEqual(res, m));
+}
+
 int main() {
     test_task1_CommonCase();
     test_task1_minAndMaxInOneLine();
+    test_task2();
 
     return 0;
 }
