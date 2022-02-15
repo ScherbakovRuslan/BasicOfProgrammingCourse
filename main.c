@@ -61,21 +61,40 @@ void test_front_oneElementInVector() {
     assert(front(&v) == &v.data[0]);
 }
 
-int main() {
-    int rows;
-    scanf("%d", &rows);
-
-    int cols;
-    scanf("%d", &cols);
-
-    matrix m = getMemMatrix(rows, cols);
-
-    inputMatrix(m);
-
+void task1(matrix m) {
     position max = getMaxValuePos(m);
-    position min = getMaxValuePos(m);
+    position min = getMinValuePos(m);
 
-    swapRows(m, max.rowIndex, min.colIndex);
+    swapRows(m, max.rowIndex, min.rowIndex);
+}
+
+void test_task1_CommonCase() {
+    matrix m = createMatrixFromArray((int[]) {1, 2, 3,
+                                              4, 5, 6,
+                                              7, 8, 9}, 3, 3);
+    matrix res = createMatrixFromArray((int[]) {7, 8, 9,
+                                                4, 5, 6,
+                                                1, 2, 3}, 3, 3);
+    task1(m);
+
+    assert(areTwoMatricesEqual(res, m));
+}
+
+void test_task1_minAndMaxInOneLine() {
+    matrix m = createMatrixFromArray((int[]) {1, 2, 9,
+                                              4, 5, 6,
+                                              7, 8, 3}, 3, 3);
+    matrix res = createMatrixFromArray((int[]) {1, 2, 9,
+                                                4, 5, 6,
+                                                7, 8, 3}, 3, 3);
+    task1(m);
+
+    assert(areTwoMatricesEqual(res, m));
+}
+
+int main() {
+    test_task1_CommonCase();
+    test_task1_minAndMaxInOneLine();
 
     return 0;
 }
