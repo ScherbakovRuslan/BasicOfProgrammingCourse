@@ -98,14 +98,14 @@ void insertionSortColsMatrixByColCriteria(matrix m,
     int *cols = (int *) malloc(sizeof(int) * m.nCols);
     int *curCols = malloc(sizeof(int) * m.nRows);
 
-    for (int i = 0; i < m.nCols; i++) {
-        for (int j = 0; j < m.nRows; i++) {
-            curCols[j] = m.values[i][j];
+    for (int i = 0; i < m.nCols; ++i) {
+        for (int j = 0; j < m.nRows; ++j) {
+            curCols[j] = m.values[j][i];
         }
         cols[i] = criteria(curCols, m.nRows);
     }
 
-    for (int i = 1; i < m.nRows; i++) {
+    for (int i = 1; i < m.nCols; ++i) {
         int j = i;
         while (j > 0 && cols[j - 1] > cols[j]) {
             swapColumns(m, j, j - 1);

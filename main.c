@@ -105,21 +105,7 @@ int getMax(int *a, int n) {
 }
 
 void sortRowsByMaxElement(matrix m) {
-    int *rows = (int *) malloc(sizeof(int) * m.nRows);
-    for (int i = 0; i < m.nRows; i++) {
-        rows[i] = getMax(m.values[i], m.nCols);
-    }
-
-    for (int i = 1; i < m.nRows; i++) {
-        int j = i;
-        while (j > 0 && rows[j - 1] > rows[j]) {
-            swapRows(m, j, j - 1);
-            universalSwap(&rows[j], &rows[j - 1], sizeof(int));
-            j--;
-        }
-    }
-
-    free(rows);
+    insertionSortRowsMatrixByRowCriteria(m, getMax);
 }
 
 void task2(matrix m) {
@@ -138,10 +124,42 @@ void test_task2() {
     assert(areTwoMatricesEqual(res, m));
 }
 
+int getMin(int *a, int n) {
+    int min = a[0];
+    for(int i = 1; i < n; i++) {
+        if(a[i] < min) {
+            min = a[i];
+        }
+    }
+
+    return min;
+}
+
+void sortColsByMinElement(matrix m) {
+    insertionSortColsMatrixByColCriteria(m, getMin);
+}
+
+void task3(matrix m) {
+    sortColsByMinElement(m);
+}
+
+void test_task3() {
+    matrix m = createMatrixFromArray((int[]) {3, 5, 2, 4, 3, 3,
+                                              2, 5, 1, 8, 2, 7,
+                                              6, 1, 4, 4, 8, 3}, 3, 6);
+    matrix res = createMatrixFromArray((int[]) {5, 2, 3, 3, 3, 4,
+                                                5, 1, 2, 2, 7, 8,
+                                                1, 4, 6, 8, 3, 4}, 3, 6);
+    task3(m);
+
+    assert(areTwoMatricesEqual(res, m));
+}
+
 int main() {
     test_task1_CommonCase();
     test_task1_minAndMaxInOneLine();
     test_task2();
+    test_task3();
 
     return 0;
 }
