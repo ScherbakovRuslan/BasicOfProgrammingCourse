@@ -95,8 +95,8 @@ void test_task1_minAndMaxInOneLine() {
 
 int getMax(int *a, int n) {
     int max = a[0];
-    for(int i = 1; i < n; i++) {
-        if(a[i] > max) {
+    for (int i = 1; i < n; i++) {
+        if (a[i] > max) {
             max = a[i];
         }
     }
@@ -126,8 +126,8 @@ void test_task2() {
 
 int getMin(int *a, int n) {
     int min = a[0];
-    for(int i = 1; i < n; i++) {
-        if(a[i] < min) {
+    for (int i = 1; i < n; i++) {
+        if (a[i] < min) {
             min = a[i];
         }
     }
@@ -158,10 +158,10 @@ void test_task3() {
 matrix mulMatrices(matrix m1, matrix m2) {
     matrix m = getMemMatrix(m1.nRows, m1.nCols);
 
-    for(int i = 0; i < m1.nRows; i++) {
-        for(int j = 0; j < m2.nCols; j++) {
+    for (int i = 0; i < m1.nRows; i++) {
+        for (int j = 0; j < m1.nCols; j++) {
             m.values[i][j] = 0;
-            for(int rows = 0; rows < m2.nRows; rows++) {
+            for (int rows = 0; rows < m2.nRows; rows++) {
                 m.values[i][j] += m1.values[i][rows] * m2.values[rows][j];
             }
         }
@@ -171,7 +171,7 @@ matrix mulMatrices(matrix m1, matrix m2) {
 }
 
 void getSquareOfMatrixIfSymmetric(matrix *m) {
-    if(isSymmetricMatrix(*m)) {
+    if (isSymmetricMatrix(*m)) {
         *m = mulMatrices(*m, *m);
     }
 }
@@ -192,7 +192,55 @@ void test_task4() {
     assert(areTwoMatricesEqual(res, m));
 }
 
+bool isUnique(long long *a, int n) {
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (a[i] == a[j]) {
+                return false;
+            }
+        }
+    }
 
+    return true;
+}
+
+long long getSum(int *a, int n) {
+    long long sum = 0;
+    for (int i = 0; i < n; i++) {
+        sum += a[i];
+    }
+
+    return sum;
+}
+
+void transposeIfMatrixHasNotEqualSumOfRows(matrix m) {
+    long long *a = malloc(sizeof(long long) * m.nRows);
+    for (int i = 0; i < m.nRows; i++) {
+        a[i] = getSum(m.values[i], m.nCols);
+    }
+
+    if (isUnique(a, m.nRows)) {
+        transposeSquareMatrix(m);
+    }
+}
+
+void task5(matrix m) {
+    if (isSquareMatrix(m)) {
+        transposeIfMatrixHasNotEqualSumOfRows(m);
+    }
+}
+
+void test_task5() {
+    matrix m = createMatrixFromArray((int[]) {1, 1, 1,
+                                              1, 1, 2,
+                                              1, 1, 3}, 3, 3);
+    matrix res = createMatrixFromArray((int[]) {1, 1, 1,
+                                                1, 1, 1,
+                                                1, 2, 3}, 3, 3);
+    task5(m);
+
+    assert(areTwoMatricesEqual(res, m));
+}
 
 int main() {
     test_task1_CommonCase();
@@ -200,6 +248,7 @@ int main() {
     test_task2();
     test_task3();
     test_task4();
+    test_task5();
 
     return 0;
 }
