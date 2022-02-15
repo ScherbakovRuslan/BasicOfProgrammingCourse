@@ -155,11 +155,51 @@ void test_task3() {
     assert(areTwoMatricesEqual(res, m));
 }
 
+matrix mulMatrices(matrix m1, matrix m2) {
+    matrix m = getMemMatrix(m1.nRows, m1.nCols);
+
+    for(int i = 0; i < m1.nRows; i++) {
+        for(int j = 0; j < m2.nCols; j++) {
+            m.values[i][j] = 0;
+            for(int rows = 0; rows < m2.nRows; rows++) {
+                m.values[i][j] += m1.values[i][rows] * m2.values[rows][j];
+            }
+        }
+    }
+
+    return m;
+}
+
+void getSquareOfMatrixIfSymmetric(matrix *m) {
+    if(isSymmetricMatrix(*m)) {
+        *m = mulMatrices(*m, *m);
+    }
+}
+
+void task4(matrix *m) {
+    getSquareOfMatrixIfSymmetric(m);
+}
+
+void test_task4() {
+    matrix m = createMatrixFromArray((int[]) {1, 2, 1,
+                                              2, 1, 3,
+                                              1, 3, 1}, 3, 3);
+    matrix res = createMatrixFromArray((int[]) {6, 7, 8,
+                                                7, 14, 8,
+                                                8, 8, 11}, 3, 3);
+    task4(&m);
+
+    assert(areTwoMatricesEqual(res, m));
+}
+
+
+
 int main() {
     test_task1_CommonCase();
     test_task1_minAndMaxInOneLine();
     test_task2();
     test_task3();
+    test_task4();
 
     return 0;
 }
