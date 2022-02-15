@@ -4,6 +4,15 @@
 libs/data_structures/CMakeFiles/data_structures.dir/bitset/bitset.c.obj
  C:/C/git bash/1/libs/data_structures/bitset/bitset.c
  C:/C/git bash/1/libs/data_structures/bitset/bitset.h
+libs/data_structures/CMakeFiles/data_structures.dir/matrix/matrix.c.obj
+ C:/C/git bash/1/libs/algorithms/algorithm.h
+ C:/C/git bash/1/libs/data_structures/matrix/matrix.c
+ C:/C/git bash/1/libs/data_structures/matrix/matrix.h
+libs/data_structures/CMakeFiles/data_structures.dir/matrix/matrixTest.c.obj
+ C:/C/git bash/1/libs/algorithms/array/array.h
+ C:/C/git bash/1/libs/data_structures/matrix/matrix.h
+ C:/C/git bash/1/libs/data_structures/matrix/matrixTest.c
+ C:/C/git bash/1/libs/data_structures/matrix/matrixTest.h
 libs/data_structures/CMakeFiles/data_structures.dir/vector/vector.c.obj
  C:/C/git bash/1/libs/data_structures/vector/vector.c
  C:/C/git bash/1/libs/data_structures/vector/vector.h

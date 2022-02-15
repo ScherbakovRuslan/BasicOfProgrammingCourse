@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+C:/C/git bash/1/libs/data_structures/matrix/matrix.h
+stdio.h
+-
+stdbool.h
+-
+
+C:/C/git bash/1/libs/data_structures/matrix/matrixTest.h
+
 C:/C/git bash/1/libs/data_structures/vector/vector.h
 stdio.h
 -
@@ -19,6 +27,10 @@ stdint.h
 -
 libs/data_structures/vector/vector.h
 C:/C/git bash/1/libs/data_structures/vector/vector.h
+libs/data_structures/matrix/matrix.h
+C:/C/git bash/1/libs/data_structures/matrix/matrix.h
+libs/data_structures/matrix/matrixTest.h
+C:/C/git bash/1/libs/data_structures/matrix/matrixTest.h
 assert.h
 -
 

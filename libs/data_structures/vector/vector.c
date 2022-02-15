@@ -76,7 +76,7 @@ int *atVector(vector *v, size_t index) {
 }
 
 int *back(vector *v) {
-    return v->data + v->size - 1;
+    return atVector(v, v->size - 1);
 }
 
 int *front(vector *v) {

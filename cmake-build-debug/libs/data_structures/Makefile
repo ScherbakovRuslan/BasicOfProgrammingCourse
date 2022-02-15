@@ -153,6 +153,54 @@ bitset/bitset.c.s:
 	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/bitset/bitset.c.s
 .PHONY : bitset/bitset.c.s
 
+matrix/matrix.obj: matrix/matrix.c.obj
+.PHONY : matrix/matrix.obj
+
+# target to build an object file
+matrix/matrix.c.obj:
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/matrix/matrix.c.obj
+.PHONY : matrix/matrix.c.obj
+
+matrix/matrix.i: matrix/matrix.c.i
+.PHONY : matrix/matrix.i
+
+# target to preprocess a source file
+matrix/matrix.c.i:
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/matrix/matrix.c.i
+.PHONY : matrix/matrix.c.i
+
+matrix/matrix.s: matrix/matrix.c.s
+.PHONY : matrix/matrix.s
+
+# target to generate assembly for a file
+matrix/matrix.c.s:
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/matrix/matrix.c.s
+.PHONY : matrix/matrix.c.s
+
+matrix/matrixTest.obj: matrix/matrixTest.c.obj
+.PHONY : matrix/matrixTest.obj
+
+# target to build an object file
+matrix/matrixTest.c.obj:
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/matrix/matrixTest.c.obj
+.PHONY : matrix/matrixTest.c.obj
+
+matrix/matrixTest.i: matrix/matrixTest.c.i
+.PHONY : matrix/matrixTest.i
+
+# target to preprocess a source file
+matrix/matrixTest.c.i:
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/matrix/matrixTest.c.i
+.PHONY : matrix/matrixTest.c.i
+
+matrix/matrixTest.s: matrix/matrixTest.c.s
+.PHONY : matrix/matrixTest.s
+
+# target to generate assembly for a file
+matrix/matrixTest.c.s:
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/matrix/matrixTest.c.s
+.PHONY : matrix/matrixTest.c.s
+
 vector/vector.obj: vector/vector.c.obj
 .PHONY : vector/vector.obj
 
@@ -189,6 +237,12 @@ help:
 	@echo ... bitset/bitset.obj
 	@echo ... bitset/bitset.i
 	@echo ... bitset/bitset.s
+	@echo ... matrix/matrix.obj
+	@echo ... matrix/matrix.i
+	@echo ... matrix/matrix.s
+	@echo ... matrix/matrixTest.obj
+	@echo ... matrix/matrixTest.i
+	@echo ... matrix/matrixTest.s
 	@echo ... vector/vector.obj
 	@echo ... vector/vector.i
 	@echo ... vector/vector.s

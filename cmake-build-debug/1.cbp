@@ -176,6 +176,18 @@
 		<Unit filename="C:/C/git bash/1/libs/data_structures/bitset/bitset.h">
 			<Option target="data_structures"/>
 		</Unit>
+		<Unit filename="C:/C/git bash/1/libs/data_structures/matrix/matrix.c">
+			<Option target="data_structures"/>
+		</Unit>
+		<Unit filename="C:/C/git bash/1/libs/data_structures/matrix/matrix.h">
+			<Option target="data_structures"/>
+		</Unit>
+		<Unit filename="C:/C/git bash/1/libs/data_structures/matrix/matrixTest.c">
+			<Option target="data_structures"/>
+		</Unit>
+		<Unit filename="C:/C/git bash/1/libs/data_structures/matrix/matrixTest.h">
+			<Option target="data_structures"/>
+		</Unit>
 		<Unit filename="C:/C/git bash/1/libs/data_structures/vector/vector.c">
 			<Option target="data_structures"/>
 		</Unit>

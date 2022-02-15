@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdint.h>
 #include "libs/data_structures/vector/vector.h"
+#include "libs/data_structures/matrix/matrix.h"
+#include "libs/data_structures/matrix/matrixTest.h"
+
 #include <assert.h>
 
 void test_pushBack_emptyVector() {
@@ -59,13 +62,7 @@ void test_front_oneElementInVector() {
 }
 
 int main() {
-    test_popBack_notEmptyVector();
-    test_pushBack_emptyVector();
-    test_pushBack_fullVector();
-    test_atVector_notEmptyVector();
-    test_atVector_requestToLastElement();
-    test_back_oneElementInVector();
-    test_front_oneElementInVector();
+    test_matrix();
 
     return 0;
 }
