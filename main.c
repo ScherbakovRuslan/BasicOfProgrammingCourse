@@ -419,7 +419,7 @@ int countNUnique(long long *a, int n) {
     long long pastElement;
     for (int i = 0; i < n - 1; i++) {
         if (a[i] == a[i + 1] && a[i] != pastElement) {
-            countNUnique += 1;
+            countNUnique ++;
             pastElement = a[i];
         }
     }
@@ -452,6 +452,42 @@ void test_task10() {
     int res = task10(m);
 
     assert(res == 3);
+}
+
+int getNSpecialElement(matrix m) {
+    int *cols = (int *) malloc(sizeof(int) * m.nCols);
+    int *maxElementInCols = (int *) malloc(sizeof(int) * m.nCols);
+    int *curCols = malloc(sizeof(int) * m.nRows);
+
+    for (int i = 0; i < m.nCols; ++i) {
+        for (int j = 0; j < m.nRows; ++j) {
+            curCols[j] = m.values[j][i];
+        }
+        cols[i] = getSum(curCols, m.nRows);
+        maxElementInCols[i] = getMax(curCols, m.nRows);
+    }
+
+    int countSpecialElement = 0;
+    for(int i = 0; i < m.nCols; i++) {
+        if(cols[i] - maxElementInCols[i] < maxElementInCols[i]) {
+            countSpecialElement ++;
+        }
+    }
+
+    return countSpecialElement;
+}
+
+int task11(matrix m) {
+    return getNSpecialElement(m);
+}
+
+void test_task11() {
+    matrix m = createMatrixFromArray((int[]) {3, 5, 5, 4,
+                                              2, 3, 6, 7,
+                                              12, 2, 1, 2}, 3, 4);
+    int res = task11(m);
+
+    assert(res == 2);
 }
 
 int main() {
