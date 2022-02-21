@@ -244,14 +244,14 @@ void test_task5() {
 }
 
 bool isMutuallyInverseMatrices(matrix m1, matrix m2) {
-    if(isEMatrix(mulMatrices(m1, m2))) {
+    if (isEMatrix(mulMatrices(m1, m2))) {
         return true;
     }
 
     return false;
 }
 
-bool task6(matrix m1, matrix  m2) {
+bool task6(matrix m1, matrix m2) {
     return isMutuallyInverseMatrices(m1, m2);
 }
 
@@ -270,12 +270,12 @@ int max(int a, int b) {
 
 long long findSumOfMaxesOfPseudoDiagonal(matrix m) {
     int sum = 0;
-    for(int i = 1; i < m.nRows; i++) {
+    for (int i = 1; i < m.nRows; i++) {
         int rIndex = i;
         int cIndex = 0;
         int maxElement = m.values[rIndex][cIndex];
-        while (cIndex < m.nCols &&  rIndex < m.nRows) {
-            if(m.values[rIndex][cIndex] > maxElement) {
+        while (cIndex < m.nCols && rIndex < m.nRows) {
+            if (m.values[rIndex][cIndex] > maxElement) {
                 maxElement = m.values[rIndex][cIndex];
             }
             cIndex++;
@@ -327,16 +327,16 @@ int getMinInArea(matrix m) {
     while (rIndex >= 0) {
         int i = lCol;
         while (i < rCol) {
-            if(m.values[rIndex][i] < min) {
+            if (m.values[rIndex][i] < min) {
                 min = m.values[rIndex][i];
             }
             i++;
         }
 
-        if(lCol > 0) {
+        if (lCol > 0) {
             lCol--;
         }
-        if(rCol + 1 < m.nCols) {
+        if (rCol + 1 < m.nCols) {
             rCol++;
         }
         rIndex--;
@@ -360,15 +360,15 @@ void test_task8() {
 
 float getDistance(int *a, int n) {
     int distance = 0;
-    for(int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {
         distance += a[i] * a[i];
     }
 
-    return (float)sqrt(distance);
+    return (float) sqrt(distance);
 }
 
 void insertionSortRowsMatrixByRowCriteriaF(matrix m,
-                                             float (*criteria)(int *, int)) {
+                                           float (*criteria)(int *, int)) {
     float *rows = (float *) malloc(sizeof(float) * m.nRows);
     for (int i = 0; i < m.nRows; i++) {
         rows[i] = criteria(m.values[i], m.nCols);
@@ -404,6 +404,56 @@ void test_task9() {
     assert(areTwoMatricesEqual(res, m));
 }
 
+int cmp_long_long(const void *pa, const void *pb) {
+    long long arg1 = *(const long long *) pa;
+    long long arg2 = *(const long long *) pb;
+
+    if (arg1 < arg2) return -1;
+    if (arg1 > arg2) return 1;
+
+    return 0;
+}
+
+int countNUnique(long long *a, int n) {
+    int countNUnique = 0;
+    long long pastElement;
+    for (int i = 0; i < n - 1; i++) {
+        if (a[i] == a[i + 1] && a[i] != pastElement) {
+            countNUnique += 1;
+            pastElement = a[i];
+        }
+    }
+
+    return countNUnique;
+}
+
+int countEqClassesByRowsSum(matrix m) {
+    long long *rows = (long long *) malloc(sizeof(long long) * m.nRows);
+    for (int i = 0; i < m.nRows; i++) {
+        rows[i] = getSum(m.values[i], m.nCols);
+    }
+    qsort(rows, m.nRows, sizeof(long long), cmp_long_long);
+
+    return countNUnique(rows, m.nRows);
+}
+
+int task10(matrix m) {
+    return countEqClassesByRowsSum(m);
+}
+
+void test_task10() {
+    matrix m = createMatrixFromArray((int[]) {7, 1,
+                                              2, 7,
+                                              5, 4,
+                                              4, 3,
+                                              1, 6,
+                                              8, 0,
+                                              0, 8}, 7, 2);
+    int res = task10(m);
+
+    assert(res == 3);
+}
+
 int main() {
     test_task1_CommonCase();
     test_task1_minAndMaxInOneLine();
@@ -415,6 +465,7 @@ int main() {
     test_task7();
     test_task8();
     test_task9();
+    test_task10();
 
     return 0;
 }
