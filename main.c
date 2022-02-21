@@ -6,6 +6,7 @@
 #include "libs/algorithms/algorithm.h"
 #include <assert.h>
 #include <malloc.h>
+#include <math.h>
 
 void test_pushBack_emptyVector() {
     vector v = createVector(3);
@@ -192,7 +193,7 @@ void test_task4() {
     assert(areTwoMatricesEqual(res, m));
 }
 
-bool isUnique(long long *a, int n) {
+bool isUnique(const long long *a, int n) {
     for (int i = 0; i < n; i++) {
         for (int j = i + 1; j < n; j++) {
             if (a[i] == a[j]) {
@@ -204,7 +205,7 @@ bool isUnique(long long *a, int n) {
     return true;
 }
 
-long long getSum(int *a, int n) {
+long long getSum(const int *a, int n) {
     long long sum = 0;
     for (int i = 0; i < n; i++) {
         sum += a[i];
@@ -357,6 +358,52 @@ void test_task8() {
     assert(res == 5);
 }
 
+float getDistance(int *a, int n) {
+    int distance = 0;
+    for(int i = 0; i < n; i++) {
+        distance += a[i] * a[i];
+    }
+
+    return (float)sqrt(distance);
+}
+
+void insertionSortRowsMatrixByRowCriteriaF(matrix m,
+                                             float (*criteria)(int *, int)) {
+    float *rows = (float *) malloc(sizeof(float) * m.nRows);
+    for (int i = 0; i < m.nRows; i++) {
+        rows[i] = criteria(m.values[i], m.nCols);
+    }
+
+    for (int i = 1; i < m.nRows; i++) {
+        int j = i;
+        while (j > 0 && rows[j - 1] > rows[j]) {
+            swapRows(m, j, j - 1);
+            universalSwap(&rows[j], &rows[j - 1], sizeof(int));
+            j--;
+        }
+    }
+}
+
+void sortByDistances(matrix m) {
+    insertionSortRowsMatrixByRowCriteriaF(m, getDistance);
+}
+
+void task9(matrix m) {
+    sortByDistances(m);
+}
+
+void test_task9() {
+    matrix m = createMatrixFromArray((int[]) {1, 2, 3,
+                                              4, 5, 6,
+                                              7, 8, 9}, 3, 3);
+    matrix res = createMatrixFromArray((int[]) {1, 2, 3,
+                                                4, 5, 6,
+                                                7, 8, 9}, 3, 3);
+    task9(m);
+
+    assert(areTwoMatricesEqual(res, m));
+}
+
 int main() {
     test_task1_CommonCase();
     test_task1_minAndMaxInOneLine();
@@ -367,6 +414,7 @@ int main() {
     test_task6();
     test_task7();
     test_task8();
+    test_task9();
 
     return 0;
 }
