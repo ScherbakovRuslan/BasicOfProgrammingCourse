@@ -502,6 +502,7 @@ int main() {
     test_task8();
     test_task9();
     test_task10();
+    test_task11();
 
     return 0;
 }
