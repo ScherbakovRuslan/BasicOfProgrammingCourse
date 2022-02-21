@@ -490,6 +490,56 @@ void test_task11() {
     assert(res == 2);
 }
 
+position getLeftMin(matrix m) {
+    position posMinElement = {0, 0};
+    for(int i = 0; i < m.nRows; i++) {
+        for(int j = 0; j < m.nCols; j++) {
+            if(m.values[i][j] < m.values[posMinElement.rowIndex][posMinElement.colIndex] ||
+            m.values[i][j] <= m.values[posMinElement.rowIndex][posMinElement.colIndex] &&
+            j < posMinElement.colIndex) {
+                posMinElement.rowIndex = i;
+                posMinElement.colIndex = j;
+            }
+        }
+    }
+
+    return posMinElement;
+}
+
+void swapPenultimateRow(matrix m, int n) {
+    if (!isSquareMatrix(m)) {
+        fprintf(stderr, "Not a square matrix");
+        exit(1);
+    }
+
+    int *cols = malloc(sizeof(int) * m.nRows);
+
+    for(int i = 0; i < m.nRows; i++) {
+        cols[i] = m.values[i][n];
+    }
+
+    for(int i = 0; i < m.nCols; i++) {
+        m.values[m.nRows - 2][i] = cols[i];
+    }
+}
+
+void task12(matrix m) {
+    position posMinElement = getLeftMin(m);
+    swapPenultimateRow(m, posMinElement.colIndex);
+}
+
+void test_task12() {
+    matrix m = createMatrixFromArray((int[]) {1, 2, 3,
+                                              4, 5, 6,
+                                              7, 8, 1}, 3, 3);
+    matrix res = createMatrixFromArray((int[]) {1, 2, 3,
+                                                1, 4, 7,
+                                                7, 8, 1}, 3, 3);
+    task12(m);
+
+    assert(areTwoMatricesEqual(res, m));
+}
+
 int main() {
     test_task1_CommonCase();
     test_task1_minAndMaxInOneLine();
@@ -503,6 +553,7 @@ int main() {
     test_task9();
     test_task10();
     test_task11();
+    test_task12();
 
     return 0;
 }
