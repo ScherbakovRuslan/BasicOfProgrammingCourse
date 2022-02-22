@@ -541,8 +541,8 @@ void test_task12() {
 }
 
 bool isNonDescendingSorted(int *a, int n) {
-    for(int i = 0; i < n - 1; i++) {
-        if(a[i] > a[i + 1]) {
+    for (int i = 0; i < n - 1; i++) {
+        if (a[i] > a[i + 1]) {
             return false;
         }
     }
@@ -551,8 +551,8 @@ bool isNonDescendingSorted(int *a, int n) {
 }
 
 bool hasAllNonDescendingRows(matrix m) {
-    for(int i = 0; i < m.nRows; i++) {
-        if(!isNonDescendingSorted(m.values[i], m.nCols)) {
+    for (int i = 0; i < m.nRows; i++) {
+        if (!isNonDescendingSorted(m.values[i], m.nCols)) {
             return false;
         }
     }
@@ -562,8 +562,8 @@ bool hasAllNonDescendingRows(matrix m) {
 
 int countNonDescendingRowsMatrices(matrix *ms, int nMatrix) {
     int countSorted = 0;
-    for(int i = 0; i < nMatrix; i++) {
-        if(hasAllNonDescendingRows(ms[i])) {
+    for (int i = 0; i < nMatrix; i++) {
+        if (hasAllNonDescendingRows(ms[i])) {
             countSorted++;
         }
     }
@@ -577,13 +577,13 @@ int task13(matrix *ms, int nMatrix) {
 
 void test_task13() {
     matrix *m = createArrayOfMatrixFromArray((int[]) {7, 1,
-                                                     1, 1,
-                                                     1, 6,
-                                                     2, 2,
-                                                     5, 4,
-                                                     2, 3,
-                                                     1, 3,
-                                                     7, 9}, 4, 2, 2);
+                                                      1, 1,
+                                                      1, 6,
+                                                      2, 2,
+                                                      5, 4,
+                                                      2, 3,
+                                                      1, 3,
+                                                      7, 9}, 4, 2, 2);
 
     int res = task13(m, 4);
 
@@ -592,8 +592,8 @@ void test_task13() {
 
 int countValues(const int *a, int n, int value) {
     int countValues = 0;
-    for(int i = 0; i < n; i++) {
-        if(a[i] == value) {
+    for (int i = 0; i < n; i++) {
+        if (a[i] == value) {
             countValues++;
         }
     }
@@ -603,8 +603,8 @@ int countValues(const int *a, int n, int value) {
 
 int countZeroRows(matrix m) {
     int count = 0;
-    for(int i = 0; i < m.nRows; i++) {
-        if(countValues(m.values[i], m.nCols, 0) == m.nCols) {
+    for (int i = 0; i < m.nRows; i++) {
+        if (countValues(m.values[i], m.nCols, 0) == m.nCols) {
             count++;
         }
     }
@@ -614,15 +614,15 @@ int countZeroRows(matrix m) {
 
 void printMatrixWithMaxZeroRows(matrix *ms, int nMatrix) {
     int maxCount = 0;
-    for(int i = 0; i < nMatrix; i++) {
+    for (int i = 0; i < nMatrix; i++) {
         int curCountZeroRows = countZeroRows(ms[i]);
-        if(curCountZeroRows > maxCount) {
+        if (curCountZeroRows > maxCount) {
             maxCount = curCountZeroRows;
         }
     }
 
-    for(int i = 0; i < nMatrix; i++) {
-        if(countZeroRows(ms[i]) == maxCount) {
+    for (int i = 0; i < nMatrix; i++) {
+        if (countZeroRows(ms[i]) == maxCount) {
             outputMatrix(ms[i]);
         }
     }
@@ -642,6 +642,53 @@ void test_task14() {
     task14(m, 4);
 }
 
+int getAbsMaxInMatrix(matrix m) {
+    int max = abs(m.values[0][0]);
+    int min = max;
+    for (int i = 0; i < m.nRows; i++) {
+        for (int j = 0; j < m.nCols; j++) {
+            if (abs(m.values[i][j] > max)) {
+                max = m.values[i][j];
+            }
+        }
+    }
+
+    return max;
+}
+
+void printMatrixWithMinRate(matrix *ms, int nMatrix) {
+    int *max = malloc(sizeof(int) * nMatrix);
+    int min = getAbsMaxInMatrix(ms[0]);
+    for (int i = 1; i < nMatrix; i++) {
+        max[i] = getAbsMaxInMatrix(ms[i]);
+        if (max[i] < min) {
+            min = max[i];
+        }
+    }
+
+    for (int i = 0; i < nMatrix; i++) {
+        if (max[i] == min) {
+            outputMatrix(ms[i]);
+        }
+    }
+}
+
+void task15(matrix *ms, int nMatrix) {
+    printMatrixWithMinRate(ms, nMatrix);
+}
+
+void test_task15() {
+    matrix *m = createArrayOfMatrixFromArray((int[]) {7, 1,
+                                                      1, 1,
+                                                      1, 6,
+                                                      2, 2,
+                                                      5, 4,
+                                                      2, 3,
+                                                      1, 3,
+                                                      2, 5}, 4, 2, 2);
+
+    task15(m, 4);
+}
 
 int main() {
     test_task1_CommonCase();
@@ -659,6 +706,7 @@ int main() {
     test_task12();
     test_task13();
     test_task14();
+    test_task15();
 
     return 0;
 }
