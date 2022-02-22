@@ -6,3 +6,21 @@
 
 #IncludeRegexTransform: 
 
+C:/C/git bash/1/libs/algorithms/algorithm.h
+stdlib.h
+-
+
+C:/C/git bash/1/libs/data_structures/matrix/matrix.c
+matrix.h
+C:/C/git bash/1/libs/data_structures/matrix/matrix.h
+../../algorithms/algorithm.h
+C:/C/git bash/1/libs/algorithms/algorithm.h
+assert.h
+-
+
+C:/C/git bash/1/libs/data_structures/matrix/matrix.h
+stdio.h
+-
+stdbool.h
+-
+

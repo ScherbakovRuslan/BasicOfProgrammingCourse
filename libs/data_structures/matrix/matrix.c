@@ -46,12 +46,14 @@ void inputMatrices(matrix *ms, int nMatrices) {
 }
 
 void outputMatrix(matrix m) {
+    printf("{");
     for (int i = 0; i < m.nRows; i++) {
         for (int j = 0; j < m.nCols; j++) {
             printf("%d ", m.values[i][j]);
         }
         printf("\n");
     }
+    printf("\b\b}\n");
 }
 
 void outputMatrices(matrix *ms, int nMatrices) {

@@ -540,6 +540,57 @@ void test_task12() {
     assert(areTwoMatricesEqual(res, m));
 }
 
+bool isNonDescendingSorted(int *a, int n) {
+    for(int i = 0; i < n - 1; i++) {
+        if(a[i] > a[i + 1]) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+bool hasAllNonDescendingRows(matrix m) {
+    for(int i = 0; i < m.nRows; i++) {
+        if(!isNonDescendingSorted(m.values[i], m.nCols)) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+int countNonDescendingRowsMatrices(matrix *ms, int nMatrix) {
+    int countSorted = 0;
+    for(int i = 0; i < nMatrix; i++) {
+        if(hasAllNonDescendingRows(ms[i])) {
+            countSorted++;
+        }
+    }
+
+    return countSorted;
+}
+
+int task13(matrix *ms, int nMatrix) {
+    return countNonDescendingRowsMatrices(ms, nMatrix);
+}
+
+void test_task13() {
+    matrix *m = createArrayOfMatrixFromArray((int[]) {7, 1,
+                                                     1, 1,
+                                                     1, 6,
+                                                     2, 2,
+                                                     5, 4,
+                                                     2, 3,
+                                                     1, 3,
+                                                     7, 9}, 4, 2, 2);
+
+    int res = task13(m, 4);
+
+    assert(res == 2);
+}
+
+
 int main() {
     test_task1_CommonCase();
     test_task1_minAndMaxInOneLine();
@@ -554,6 +605,7 @@ int main() {
     test_task10();
     test_task11();
     test_task12();
+    test_task13();
 
     return 0;
 }
