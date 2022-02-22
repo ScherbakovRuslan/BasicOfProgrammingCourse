@@ -590,6 +590,58 @@ void test_task13() {
     assert(res == 2);
 }
 
+int countValues(const int *a, int n, int value) {
+    int countValues = 0;
+    for(int i = 0; i < n; i++) {
+        if(a[i] == value) {
+            countValues++;
+        }
+    }
+
+    return countValues;
+}
+
+int countZeroRows(matrix m) {
+    int count = 0;
+    for(int i = 0; i < m.nRows; i++) {
+        if(countValues(m.values[i], m.nCols, 0) == m.nCols) {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+void printMatrixWithMaxZeroRows(matrix *ms, int nMatrix) {
+    int maxCount = 0;
+    for(int i = 0; i < nMatrix; i++) {
+        int curCountZeroRows = countZeroRows(ms[i]);
+        if(curCountZeroRows > maxCount) {
+            maxCount = curCountZeroRows;
+        }
+    }
+
+    for(int i = 0; i < nMatrix; i++) {
+        if(countZeroRows(ms[i]) == maxCount) {
+            outputMatrix(ms[i]);
+        }
+    }
+}
+
+void task14(matrix *ms, int nMatrix) {
+    printMatrixWithMaxZeroRows(ms, nMatrix);
+}
+
+void test_task14() {
+    matrix *m = createArrayOfMatrixFromArray((int[]) {0, 1, 1, 0, 0, 0,
+                                                      1, 1, 2, 1, 1, 1,
+                                                      0, 0, 0, 0, 4, 7,
+                                                      0, 0, 0, 1, 0, 0,
+                                                      0, 1, 0, 2, 0, 3}, 4, 3, 2);
+
+    task14(m, 4);
+}
+
 
 int main() {
     test_task1_CommonCase();
@@ -606,6 +658,7 @@ int main() {
     test_task11();
     test_task12();
     test_task13();
+    test_task14();
 
     return 0;
 }
