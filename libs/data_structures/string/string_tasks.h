@@ -16,4 +16,12 @@ void test_task1_CommonCase();
 
 void test_task1_AllSpace();
 
+// Сокращает количество пробелов между
+// словами данного предложения до одного
+void removeExtraSpaces(char *s);
+
+void test_task2_CommonCase();
+
+void test_task2_OneSpace();
+
 #endif //INC_1_STRING_TASKS_H

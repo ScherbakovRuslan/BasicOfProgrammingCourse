@@ -15,6 +15,8 @@ int main() {
     test_string();
     test_task1_CommonCase();
     test_task1_AllSpace();
+    test_task2_CommonCase();
+    test_task2_OneSpace();
 
     return 0;
 }
