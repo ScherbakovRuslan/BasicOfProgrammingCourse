@@ -11,6 +11,9 @@ set(CMAKE_DEPENDS_CHECK_C
   "C:/C/git bash/1/libs/data_structures/bitset/bitset.c" "C:/C/git bash/1/cmake-build-debug/libs/data_structures/CMakeFiles/data_structures.dir/bitset/bitset.c.obj"
   "C:/C/git bash/1/libs/data_structures/matrix/matrix.c" "C:/C/git bash/1/cmake-build-debug/libs/data_structures/CMakeFiles/data_structures.dir/matrix/matrix.c.obj"
   "C:/C/git bash/1/libs/data_structures/matrix/matrixTest.c" "C:/C/git bash/1/cmake-build-debug/libs/data_structures/CMakeFiles/data_structures.dir/matrix/matrixTest.c.obj"
+  "C:/C/git bash/1/libs/data_structures/string/string_.c" "C:/C/git bash/1/cmake-build-debug/libs/data_structures/CMakeFiles/data_structures.dir/string/string_.c.obj"
+  "C:/C/git bash/1/libs/data_structures/string/string_tasks.c" "C:/C/git bash/1/cmake-build-debug/libs/data_structures/CMakeFiles/data_structures.dir/string/string_tasks.c.obj"
+  "C:/C/git bash/1/libs/data_structures/string/string_test.c" "C:/C/git bash/1/cmake-build-debug/libs/data_structures/CMakeFiles/data_structures.dir/string/string_test.c.obj"
   "C:/C/git bash/1/libs/data_structures/vector/vector.c" "C:/C/git bash/1/cmake-build-debug/libs/data_structures/CMakeFiles/data_structures.dir/vector/vector.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")

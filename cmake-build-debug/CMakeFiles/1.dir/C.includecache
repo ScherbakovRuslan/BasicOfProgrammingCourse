@@ -18,17 +18,19 @@ stdbool.h
 
 C:/C/git bash/1/libs/data_structures/matrix/matrixTest.h
 
+C:/C/git bash/1/libs/data_structures/string/string_.h
+stdlib.h
+-
+
+C:/C/git bash/1/libs/data_structures/string/string_tasks.h
+
+C:/C/git bash/1/libs/data_structures/string/string_test.h
+
 C:/C/git bash/1/libs/data_structures/vector/vector.h
 stdio.h
 -
 stdbool.h
 -
-
-C:/C/git bash/1/libs/string/string_.h
-stdlib.h
--
-
-C:/C/git bash/1/libs/string/string_test.h
 
 C:/C/git bash/1/main.c
 stdio.h
@@ -49,8 +51,10 @@ malloc.h
 -
 math.h
 -
-libs/string/string_.h
-C:/C/git bash/1/libs/string/string_.h
-libs/string/string_test.h
-C:/C/git bash/1/libs/string/string_test.h
+libs/data_structures/string/string_.h
+C:/C/git bash/1/libs/data_structures/string/string_.h
+libs/data_structures/string/string_test.h
+C:/C/git bash/1/libs/data_structures/string/string_test.h
+libs/data_structures/string/string_tasks.h
+C:/C/git bash/1/libs/data_structures/string/string_tasks.h
 

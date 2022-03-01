@@ -154,19 +154,6 @@ algorithms/fast:
 	$(MAKE) $(MAKESILENT) -f libs\algorithms\CMakeFiles\algorithms.dir\build.make libs/algorithms/CMakeFiles/algorithms.dir/build
 .PHONY : algorithms/fast
 
-#=============================================================================
-# Target rules for targets named string
-
-# Build rule for target.
-string: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 string
-.PHONY : string
-
-# fast build rule for target.
-string/fast:
-	$(MAKE) $(MAKESILENT) -f libs\string\CMakeFiles\string.dir\build.make libs/string/CMakeFiles/string.dir/build
-.PHONY : string/fast
-
 main.obj: main.c.obj
 .PHONY : main.obj
 
@@ -202,7 +189,6 @@ help:
 	@echo ... 1
 	@echo ... algorithms
 	@echo ... data_structures
-	@echo ... string
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

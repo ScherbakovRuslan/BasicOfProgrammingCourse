@@ -89,7 +89,6 @@ CMakeFiles/1.dir/main.c.s: cmake_force
 1.exe: CMakeFiles/1.dir/build.make
 1.exe: libs/data_structures/libdata_structures.a
 1.exe: libs/algorithms/libalgorithms.a
-1.exe: libs/string/libstring.a
 1.exe: CMakeFiles/1.dir/linklibs.rsp
 1.exe: CMakeFiles/1.dir/objects1.rsp
 1.exe: CMakeFiles/1.dir/link.txt

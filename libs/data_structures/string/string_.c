@@ -19,30 +19,27 @@ char *find(char *begin, char *end, int ch) {
 }
 
 char* findNonSpace(char *begin) {
-    char *firstSymbol = begin;
-    while(isspace(*firstSymbol)) {
-        firstSymbol++;
+    while(isspace(*begin)) {
+        begin++;
     }
 
-    return firstSymbol;
+    return begin;
 }
 
 char* findSpace(char *begin) {
-    char *firstSpace = begin;
-    while(*firstSpace != '\0' && !isspace(*firstSpace)) {
-        firstSpace++;
+    while(*begin != '\0' && !isspace(*begin)) {
+        begin++;
     }
 
-    return firstSpace;
+    return begin;
 }
 
 char* findNonSpaceReverse(char *rbegin, const char *rend) {
-    char *firstSpace = rbegin;
-    while(firstSpace != rend && !isspace(*firstSpace)) {
-        firstSpace--;
+    while(rbegin != rend && !isspace(*rbegin)) {
+        rbegin--;
     }
 
-    return firstSpace;
+    return rbegin;
 }
 
 int strcmp(const char *lhs, const char *rhs) {

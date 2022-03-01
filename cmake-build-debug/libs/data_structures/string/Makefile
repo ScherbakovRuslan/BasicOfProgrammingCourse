@@ -86,14 +86,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(CMAKE_COMMAND) -E cmake_progress_start "C:\C\git bash\1\cmake-build-debug\CMakeFiles" "C:\C\git bash\1\cmake-build-debug\libs\string\\CMakeFiles\progress.marks"
-	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 libs/string/all
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(CMAKE_COMMAND) -E cmake_progress_start "C:\C\git bash\1\cmake-build-debug\CMakeFiles" "C:\C\git bash\1\cmake-build-debug\libs\data_structures\string\\CMakeFiles\progress.marks"
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 libs/data_structures/string/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "C:\C\git bash\1\cmake-build-debug\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 libs/string/clean
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 libs/data_structures/string/clean
 .PHONY : clean
 
 # The main clean target
@@ -102,12 +102,12 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 libs/string/preinstall
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 libs/data_structures/string/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 libs/string/preinstall
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 libs/data_structures/string/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
@@ -116,17 +116,17 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-libs/string/CMakeFiles/string.dir/rule:
-	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 libs/string/CMakeFiles/string.dir/rule
-.PHONY : libs/string/CMakeFiles/string.dir/rule
+libs/data_structures/string/CMakeFiles/string.dir/rule:
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 libs/data_structures/string/CMakeFiles/string.dir/rule
+.PHONY : libs/data_structures/string/CMakeFiles/string.dir/rule
 
 # Convenience name for target.
-string: libs/string/CMakeFiles/string.dir/rule
+string: libs/data_structures/string/CMakeFiles/string.dir/rule
 .PHONY : string
 
 # fast build rule for target.
 string/fast:
-	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\string\CMakeFiles\string.dir\build.make libs/string/CMakeFiles/string.dir/build
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\data_structures\string\CMakeFiles\string.dir\build.make libs/data_structures/string/CMakeFiles/string.dir/build
 .PHONY : string/fast
 
 string_.obj: string_.c.obj
@@ -134,7 +134,7 @@ string_.obj: string_.c.obj
 
 # target to build an object file
 string_.c.obj:
-	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\string\CMakeFiles\string.dir\build.make libs/string/CMakeFiles/string.dir/string_.c.obj
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\data_structures\string\CMakeFiles\string.dir\build.make libs/data_structures/string/CMakeFiles/string.dir/string_.c.obj
 .PHONY : string_.c.obj
 
 string_.i: string_.c.i
@@ -142,7 +142,7 @@ string_.i: string_.c.i
 
 # target to preprocess a source file
 string_.c.i:
-	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\string\CMakeFiles\string.dir\build.make libs/string/CMakeFiles/string.dir/string_.c.i
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\data_structures\string\CMakeFiles\string.dir\build.make libs/data_structures/string/CMakeFiles/string.dir/string_.c.i
 .PHONY : string_.c.i
 
 string_.s: string_.c.s
@@ -150,7 +150,7 @@ string_.s: string_.c.s
 
 # target to generate assembly for a file
 string_.c.s:
-	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\string\CMakeFiles\string.dir\build.make libs/string/CMakeFiles/string.dir/string_.c.s
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\data_structures\string\CMakeFiles\string.dir\build.make libs/data_structures/string/CMakeFiles/string.dir/string_.c.s
 .PHONY : string_.c.s
 
 string_tasks.obj: string_tasks.c.obj
@@ -158,7 +158,7 @@ string_tasks.obj: string_tasks.c.obj
 
 # target to build an object file
 string_tasks.c.obj:
-	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\string\CMakeFiles\string.dir\build.make libs/string/CMakeFiles/string.dir/string_tasks.c.obj
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\data_structures\string\CMakeFiles\string.dir\build.make libs/data_structures/string/CMakeFiles/string.dir/string_tasks.c.obj
 .PHONY : string_tasks.c.obj
 
 string_tasks.i: string_tasks.c.i
@@ -166,7 +166,7 @@ string_tasks.i: string_tasks.c.i
 
 # target to preprocess a source file
 string_tasks.c.i:
-	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\string\CMakeFiles\string.dir\build.make libs/string/CMakeFiles/string.dir/string_tasks.c.i
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\data_structures\string\CMakeFiles\string.dir\build.make libs/data_structures/string/CMakeFiles/string.dir/string_tasks.c.i
 .PHONY : string_tasks.c.i
 
 string_tasks.s: string_tasks.c.s
@@ -174,7 +174,7 @@ string_tasks.s: string_tasks.c.s
 
 # target to generate assembly for a file
 string_tasks.c.s:
-	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\string\CMakeFiles\string.dir\build.make libs/string/CMakeFiles/string.dir/string_tasks.c.s
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\data_structures\string\CMakeFiles\string.dir\build.make libs/data_structures/string/CMakeFiles/string.dir/string_tasks.c.s
 .PHONY : string_tasks.c.s
 
 string_test.obj: string_test.c.obj
@@ -182,7 +182,7 @@ string_test.obj: string_test.c.obj
 
 # target to build an object file
 string_test.c.obj:
-	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\string\CMakeFiles\string.dir\build.make libs/string/CMakeFiles/string.dir/string_test.c.obj
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\data_structures\string\CMakeFiles\string.dir\build.make libs/data_structures/string/CMakeFiles/string.dir/string_test.c.obj
 .PHONY : string_test.c.obj
 
 string_test.i: string_test.c.i
@@ -190,7 +190,7 @@ string_test.i: string_test.c.i
 
 # target to preprocess a source file
 string_test.c.i:
-	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\string\CMakeFiles\string.dir\build.make libs/string/CMakeFiles/string.dir/string_test.c.i
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\data_structures\string\CMakeFiles\string.dir\build.make libs/data_structures/string/CMakeFiles/string.dir/string_test.c.i
 .PHONY : string_test.c.i
 
 string_test.s: string_test.c.s
@@ -198,7 +198,7 @@ string_test.s: string_test.c.s
 
 # target to generate assembly for a file
 string_test.c.s:
-	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\string\CMakeFiles\string.dir\build.make libs/string/CMakeFiles/string.dir/string_test.c.s
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\data_structures\string\CMakeFiles\string.dir\build.make libs/data_structures/string/CMakeFiles/string.dir/string_test.c.s
 .PHONY : string_test.c.s
 
 # Help Target

@@ -10,13 +10,15 @@ C:/C/git bash/1/libs/string/string_.h
 stdlib.h
 -
 
-C:/C/git bash/1/libs/string/string_test.c
-string_test.h
-C:/C/git bash/1/libs/string/string_test.h
+C:/C/git bash/1/libs/string/string_tasks.c
+string_tasks.h
+C:/C/git bash/1/libs/string/string_tasks.h
+stdio.h
+-
 string_.h
 C:/C/git bash/1/libs/string/string_.h
-assert.h
+ctype.h
 -
 
-C:/C/git bash/1/libs/string/string_test.h
+C:/C/git bash/1/libs/string/string_tasks.h
 

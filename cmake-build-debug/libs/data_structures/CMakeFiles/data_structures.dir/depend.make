@@ -12,6 +12,16 @@ libs/data_structures/CMakeFiles/data_structures.dir/matrix/matrixTest.c.obj: \
  ../libs/data_structures/matrix/matrix.h \
  ../libs/data_structures/matrix/matrixTest.c \
  ../libs/data_structures/matrix/matrixTest.h
+libs/data_structures/CMakeFiles/data_structures.dir/string/string_.c.obj: \
+ ../libs/data_structures/string/string_.c
+libs/data_structures/CMakeFiles/data_structures.dir/string/string_tasks.c.obj: \
+ ../libs/data_structures/string/string_.h \
+ ../libs/data_structures/string/string_tasks.c \
+ ../libs/data_structures/string/string_tasks.h
+libs/data_structures/CMakeFiles/data_structures.dir/string/string_test.c.obj: \
+ ../libs/data_structures/string/string_.h \
+ ../libs/data_structures/string/string_test.c \
+ ../libs/data_structures/string/string_test.h
 libs/data_structures/CMakeFiles/data_structures.dir/vector/vector.c.obj: \
  ../libs/data_structures/vector/vector.c \
  ../libs/data_structures/vector/vector.h

@@ -65,22 +65,9 @@ include libs/string/CMakeFiles/string.dir/progress.make
 # Include the compile flags for this target's objects.
 include libs/string/CMakeFiles/string.dir/flags.make
 
-libs/string/CMakeFiles/string.dir/tasks/string_tasks.c.obj: libs/string/CMakeFiles/string.dir/flags.make
-libs/string/CMakeFiles/string.dir/tasks/string_tasks.c.obj: ../libs/string/tasks/string_tasks.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\C\git bash\1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object libs/string/CMakeFiles/string.dir/tasks/string_tasks.c.obj"
-	cd /d C:\C\GITBAS~1\1\CMAKE-~1\libs\string && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\string.dir\tasks\string_tasks.c.obj -c "C:\C\git bash\1\libs\string\tasks\string_tasks.c"
-
-libs/string/CMakeFiles/string.dir/tasks/string_tasks.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/string.dir/tasks/string_tasks.c.i"
-	cd /d C:\C\GITBAS~1\1\CMAKE-~1\libs\string && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\C\git bash\1\libs\string\tasks\string_tasks.c" > CMakeFiles\string.dir\tasks\string_tasks.c.i
-
-libs/string/CMakeFiles/string.dir/tasks/string_tasks.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/string.dir/tasks/string_tasks.c.s"
-	cd /d C:\C\GITBAS~1\1\CMAKE-~1\libs\string && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\C\git bash\1\libs\string\tasks\string_tasks.c" -o CMakeFiles\string.dir\tasks\string_tasks.c.s
-
 libs/string/CMakeFiles/string.dir/string_.c.obj: libs/string/CMakeFiles/string.dir/flags.make
 libs/string/CMakeFiles/string.dir/string_.c.obj: ../libs/string/string_.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\C\git bash\1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object libs/string/CMakeFiles/string.dir/string_.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\C\git bash\1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object libs/string/CMakeFiles/string.dir/string_.c.obj"
 	cd /d C:\C\GITBAS~1\1\CMAKE-~1\libs\string && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\string.dir\string_.c.obj -c "C:\C\git bash\1\libs\string\string_.c"
 
 libs/string/CMakeFiles/string.dir/string_.c.i: cmake_force
@@ -93,7 +80,7 @@ libs/string/CMakeFiles/string.dir/string_.c.s: cmake_force
 
 libs/string/CMakeFiles/string.dir/string_test.c.obj: libs/string/CMakeFiles/string.dir/flags.make
 libs/string/CMakeFiles/string.dir/string_test.c.obj: ../libs/string/string_test.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\C\git bash\1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object libs/string/CMakeFiles/string.dir/string_test.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\C\git bash\1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object libs/string/CMakeFiles/string.dir/string_test.c.obj"
 	cd /d C:\C\GITBAS~1\1\CMAKE-~1\libs\string && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\string.dir\string_test.c.obj -c "C:\C\git bash\1\libs\string\string_test.c"
 
 libs/string/CMakeFiles/string.dir/string_test.c.i: cmake_force
@@ -104,18 +91,31 @@ libs/string/CMakeFiles/string.dir/string_test.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/string.dir/string_test.c.s"
 	cd /d C:\C\GITBAS~1\1\CMAKE-~1\libs\string && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\C\git bash\1\libs\string\string_test.c" -o CMakeFiles\string.dir\string_test.c.s
 
+libs/string/CMakeFiles/string.dir/string_tasks.c.obj: libs/string/CMakeFiles/string.dir/flags.make
+libs/string/CMakeFiles/string.dir/string_tasks.c.obj: ../libs/string/string_tasks.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\C\git bash\1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object libs/string/CMakeFiles/string.dir/string_tasks.c.obj"
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1\libs\string && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\string.dir\string_tasks.c.obj -c "C:\C\git bash\1\libs\string\string_tasks.c"
+
+libs/string/CMakeFiles/string.dir/string_tasks.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/string.dir/string_tasks.c.i"
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1\libs\string && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\C\git bash\1\libs\string\string_tasks.c" > CMakeFiles\string.dir\string_tasks.c.i
+
+libs/string/CMakeFiles/string.dir/string_tasks.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/string.dir/string_tasks.c.s"
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1\libs\string && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\C\git bash\1\libs\string\string_tasks.c" -o CMakeFiles\string.dir\string_tasks.c.s
+
 # Object files for target string
 string_OBJECTS = \
-"CMakeFiles/string.dir/tasks/string_tasks.c.obj" \
 "CMakeFiles/string.dir/string_.c.obj" \
-"CMakeFiles/string.dir/string_test.c.obj"
+"CMakeFiles/string.dir/string_test.c.obj" \
+"CMakeFiles/string.dir/string_tasks.c.obj"
 
 # External object files for target string
 string_EXTERNAL_OBJECTS =
 
-libs/string/libstring.a: libs/string/CMakeFiles/string.dir/tasks/string_tasks.c.obj
 libs/string/libstring.a: libs/string/CMakeFiles/string.dir/string_.c.obj
 libs/string/libstring.a: libs/string/CMakeFiles/string.dir/string_test.c.obj
+libs/string/libstring.a: libs/string/CMakeFiles/string.dir/string_tasks.c.obj
 libs/string/libstring.a: libs/string/CMakeFiles/string.dir/build.make
 libs/string/libstring.a: libs/string/CMakeFiles/string.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\C\git bash\1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library libstring.a"

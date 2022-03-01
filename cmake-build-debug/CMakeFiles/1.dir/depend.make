@@ -5,7 +5,8 @@ CMakeFiles/1.dir/main.c.obj: \
  ../libs/algorithms/algorithm.h \
  ../libs/data_structures/matrix/matrix.h \
  ../libs/data_structures/matrix/matrixTest.h \
+ ../libs/data_structures/string/string_.h \
+ ../libs/data_structures/string/string_tasks.h \
+ ../libs/data_structures/string/string_test.h \
  ../libs/data_structures/vector/vector.h \
- ../libs/string/string_.h \
- ../libs/string/string_test.h \
  ../main.c

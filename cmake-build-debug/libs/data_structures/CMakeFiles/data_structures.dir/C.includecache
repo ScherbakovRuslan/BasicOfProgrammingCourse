@@ -6,3 +6,19 @@
 
 #IncludeRegexTransform: 
 
+C:/C/git bash/1/libs/data_structures/string/string_.h
+stdlib.h
+-
+
+C:/C/git bash/1/libs/data_structures/string/string_tasks.c
+string_tasks.h
+C:/C/git bash/1/libs/data_structures/string/string_tasks.h
+stdio.h
+-
+string_.h
+C:/C/git bash/1/libs/data_structures/string/string_.h
+ctype.h
+-
+
+C:/C/git bash/1/libs/data_structures/string/string_tasks.h
+

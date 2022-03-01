@@ -3,9 +3,11 @@
 
 libs/string/CMakeFiles/string.dir/string_.c.obj: \
  ../libs/string/string_.c
+libs/string/CMakeFiles/string.dir/string_tasks.c.obj: \
+ ../libs/string/string_.h \
+ ../libs/string/string_tasks.c \
+ ../libs/string/string_tasks.h
 libs/string/CMakeFiles/string.dir/string_test.c.obj: \
  ../libs/string/string_.h \
  ../libs/string/string_test.c \
  ../libs/string/string_test.h
-libs/string/CMakeFiles/string.dir/tasks/string_tasks.c.obj: \
- ../libs/string/tasks/string_tasks.c

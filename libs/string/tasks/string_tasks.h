@@ -1,4 +1,0 @@
-#ifndef INC_1_STRING_TASKS_H
-#define INC_1_STRING_TASKS_H
-
-#endif //INC_1_STRING_TASKS_H

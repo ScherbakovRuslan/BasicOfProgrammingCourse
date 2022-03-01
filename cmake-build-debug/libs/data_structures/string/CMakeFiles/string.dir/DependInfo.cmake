@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/C/git bash/1/libs/string/string_.c" "C:/C/git bash/1/cmake-build-debug/libs/string/CMakeFiles/string.dir/string_.c.obj"
-  "C:/C/git bash/1/libs/string/string_tasks.c" "C:/C/git bash/1/cmake-build-debug/libs/string/CMakeFiles/string.dir/string_tasks.c.obj"
-  "C:/C/git bash/1/libs/string/string_test.c" "C:/C/git bash/1/cmake-build-debug/libs/string/CMakeFiles/string.dir/string_test.c.obj"
+  "C:/C/git bash/1/libs/data_structures/string/string_.c" "C:/C/git bash/1/cmake-build-debug/libs/data_structures/string/CMakeFiles/string.dir/string_.c.obj"
+  "C:/C/git bash/1/libs/data_structures/string/string_tasks.c" "C:/C/git bash/1/cmake-build-debug/libs/data_structures/string/CMakeFiles/string.dir/string_tasks.c.obj"
+  "C:/C/git bash/1/libs/data_structures/string/string_test.c" "C:/C/git bash/1/cmake-build-debug/libs/data_structures/string/CMakeFiles/string.dir/string_test.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

@@ -201,6 +201,78 @@ matrix/matrixTest.c.s:
 	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/matrix/matrixTest.c.s
 .PHONY : matrix/matrixTest.c.s
 
+string/string_.obj: string/string_.c.obj
+.PHONY : string/string_.obj
+
+# target to build an object file
+string/string_.c.obj:
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/string/string_.c.obj
+.PHONY : string/string_.c.obj
+
+string/string_.i: string/string_.c.i
+.PHONY : string/string_.i
+
+# target to preprocess a source file
+string/string_.c.i:
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/string/string_.c.i
+.PHONY : string/string_.c.i
+
+string/string_.s: string/string_.c.s
+.PHONY : string/string_.s
+
+# target to generate assembly for a file
+string/string_.c.s:
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/string/string_.c.s
+.PHONY : string/string_.c.s
+
+string/string_tasks.obj: string/string_tasks.c.obj
+.PHONY : string/string_tasks.obj
+
+# target to build an object file
+string/string_tasks.c.obj:
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/string/string_tasks.c.obj
+.PHONY : string/string_tasks.c.obj
+
+string/string_tasks.i: string/string_tasks.c.i
+.PHONY : string/string_tasks.i
+
+# target to preprocess a source file
+string/string_tasks.c.i:
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/string/string_tasks.c.i
+.PHONY : string/string_tasks.c.i
+
+string/string_tasks.s: string/string_tasks.c.s
+.PHONY : string/string_tasks.s
+
+# target to generate assembly for a file
+string/string_tasks.c.s:
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/string/string_tasks.c.s
+.PHONY : string/string_tasks.c.s
+
+string/string_test.obj: string/string_test.c.obj
+.PHONY : string/string_test.obj
+
+# target to build an object file
+string/string_test.c.obj:
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/string/string_test.c.obj
+.PHONY : string/string_test.c.obj
+
+string/string_test.i: string/string_test.c.i
+.PHONY : string/string_test.i
+
+# target to preprocess a source file
+string/string_test.c.i:
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/string/string_test.c.i
+.PHONY : string/string_test.c.i
+
+string/string_test.s: string/string_test.c.s
+.PHONY : string/string_test.s
+
+# target to generate assembly for a file
+string/string_test.c.s:
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/string/string_test.c.s
+.PHONY : string/string_test.c.s
+
 vector/vector.obj: vector/vector.c.obj
 .PHONY : vector/vector.obj
 
@@ -243,6 +315,15 @@ help:
 	@echo ... matrix/matrixTest.obj
 	@echo ... matrix/matrixTest.i
 	@echo ... matrix/matrixTest.s
+	@echo ... string/string_.obj
+	@echo ... string/string_.i
+	@echo ... string/string_.s
+	@echo ... string/string_tasks.obj
+	@echo ... string/string_tasks.i
+	@echo ... string/string_tasks.s
+	@echo ... string/string_test.obj
+	@echo ... string/string_test.i
+	@echo ... string/string_test.s
 	@echo ... vector/vector.obj
 	@echo ... vector/vector.i
 	@echo ... vector/vector.s

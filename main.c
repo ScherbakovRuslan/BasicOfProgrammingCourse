@@ -7,13 +7,14 @@
 #include <assert.h>
 #include <malloc.h>
 #include <math.h>
-#include "libs/string/string_.h"
-#include "libs/string/string_test.h"
-
-
+#include "libs/data_structures/string/string_.h"
+#include "libs/data_structures/string/string_test.h"
+#include "libs/data_structures/string/string_tasks.h"
 
 int main() {
     test_string();
+    test_task1_CommonCase();
+    test_task1_AllSpace();
 
     return 0;
 }

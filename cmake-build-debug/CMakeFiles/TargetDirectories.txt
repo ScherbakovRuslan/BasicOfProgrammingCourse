@@ -9,6 +9,3 @@ C:/C/git bash/1/cmake-build-debug/libs/data_structures/CMakeFiles/rebuild_cache.
 C:/C/git bash/1/cmake-build-debug/libs/algorithms/CMakeFiles/algorithms.dir
 C:/C/git bash/1/cmake-build-debug/libs/algorithms/CMakeFiles/edit_cache.dir
 C:/C/git bash/1/cmake-build-debug/libs/algorithms/CMakeFiles/rebuild_cache.dir
-C:/C/git bash/1/cmake-build-debug/libs/string/CMakeFiles/edit_cache.dir
-C:/C/git bash/1/cmake-build-debug/libs/string/CMakeFiles/string.dir
-C:/C/git bash/1/cmake-build-debug/libs/string/CMakeFiles/rebuild_cache.dir

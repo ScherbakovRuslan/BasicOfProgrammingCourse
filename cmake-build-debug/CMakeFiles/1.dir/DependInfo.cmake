@@ -24,7 +24,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "C:/C/git bash/1/cmake-build-debug/libs/data_structures/CMakeFiles/data_structures.dir/DependInfo.cmake"
   "C:/C/git bash/1/cmake-build-debug/libs/algorithms/CMakeFiles/algorithms.dir/DependInfo.cmake"
-  "C:/C/git bash/1/cmake-build-debug/libs/string/CMakeFiles/string.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.
