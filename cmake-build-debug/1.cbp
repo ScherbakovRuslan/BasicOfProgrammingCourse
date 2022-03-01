@@ -5,7 +5,7 @@
 		<Option title="1"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\libs\;CMake Files\libs\data_structures\;CMake Files\libs\algorithms\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\libs\;CMake Files\libs\data_structures\;CMake Files\libs\algorithms\;CMake Files\libs\string\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="C:/C/git bash/1/cmake-build-debug"/>
@@ -145,6 +145,42 @@
 					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/C/git bash/1/cmake-build-debug/libs/algorithms/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="string">
+				<Option output="C:/C/git bash/1/cmake-build-debug/libs/string/libstring.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/C/git bash/1/cmake-build-debug/libs/string"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/C/git bash/1/cmake-build-debug/libs/string/Makefile&quot;  VERBOSE=1 string"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/C/git bash/1/cmake-build-debug/libs/string/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/C/git bash/1/cmake-build-debug/libs/string/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/C/git bash/1/cmake-build-debug/libs/string/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="string/fast">
+				<Option output="C:/C/git bash/1/cmake-build-debug/libs/string/libstring.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/C/git bash/1/cmake-build-debug/libs/string"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/C/git bash/1/cmake-build-debug/libs/string/Makefile&quot;  VERBOSE=1 string/fast"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/C/git bash/1/cmake-build-debug/libs/string/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/C/git bash/1/cmake-build-debug/libs/string/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/C/git bash/1/cmake-build-debug/libs/string/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 		</Build>
 		<Unit filename="C:/C/git bash/1/libs/algorithms/algorithm.c">
 			<Option target="algorithms"/>
@@ -194,6 +230,24 @@
 		<Unit filename="C:/C/git bash/1/libs/data_structures/vector/vector.h">
 			<Option target="data_structures"/>
 		</Unit>
+		<Unit filename="C:/C/git bash/1/libs/string/string_.c">
+			<Option target="string"/>
+		</Unit>
+		<Unit filename="C:/C/git bash/1/libs/string/string_.h">
+			<Option target="string"/>
+		</Unit>
+		<Unit filename="C:/C/git bash/1/libs/string/string_test.c">
+			<Option target="string"/>
+		</Unit>
+		<Unit filename="C:/C/git bash/1/libs/string/string_test.h">
+			<Option target="string"/>
+		</Unit>
+		<Unit filename="C:/C/git bash/1/libs/string/tasks/string_tasks.c">
+			<Option target="string"/>
+		</Unit>
+		<Unit filename="C:/C/git bash/1/libs/string/tasks/string_tasks.h">
+			<Option target="string"/>
+		</Unit>
 		<Unit filename="C:/C/git bash/1/main.c">
 			<Option target="1"/>
 		</Unit>
@@ -208,6 +262,9 @@
 		</Unit>
 		<Unit filename="C:/C/git bash/1/libs/algorithms/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\libs\algorithms\"/>
+		</Unit>
+		<Unit filename="C:/C/git bash/1/libs/string/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\libs\string\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>
