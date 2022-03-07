@@ -17,6 +17,8 @@ int main() {
     test_task1_AllSpace();
     test_task2_CommonCase();
     test_task2_OneSpace();
+    test_digitToStartForEveryWord_CommonCase();
+    test_digitToStartForEveryWord_digitsInWord();
 
     return 0;
 }

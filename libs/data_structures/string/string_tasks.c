@@ -1,6 +1,5 @@
 #include "string_tasks.h"
 #include <stdio.h>
-#include "string_.h"
 #include <ctype.h>
 #include <string.h>
 
@@ -87,3 +86,44 @@ void test_task2_OneSpace() {
     ASSERT_STRING("gh hgtr", s);
 }
 
+int getWord(char *beginSearch, WordDescriptor *word) {
+    word->begin = findNonSpace(beginSearch);
+    if (*word->begin == '\0')
+    return 0;
+
+    word->end = findSpace(word->begin);
+
+    return 1;
+}
+
+void digitToStartWithSavingOrder(WordDescriptor word) {
+    char *endStringBuffer = copy(word.begin, word.end,
+                                 _stringBuffer);
+    char *recPosition = copyIf(_stringBuffer, endStringBuffer, word.begin,
+                               isdigit);
+    copyIf(_stringBuffer, endStringBuffer, recPosition, isalpha);
+}
+
+void digitToStartForEveryWord(char *s) {
+    char *beginSearch = s;
+    WordDescriptor word;
+    while (getWord(beginSearch, &word)) {
+        digitToStartWithSavingOrder(word);
+
+        beginSearch = word.end;
+    }
+}
+
+void test_digitToStartForEveryWord_CommonCase() {
+    char s[] = "sgdf432 sdf924";
+    digitToStartForEveryWord(s);
+
+    ASSERT_STRING("432sgdf 924sdf", s);
+}
+
+void test_digitToStartForEveryWord_digitsInWord() {
+    char s[] = "f5k6kh65 s8g43lv09";
+    digitToStartForEveryWord(s);
+
+    ASSERT_STRING("5665fkkh 84309sglv", s);
+}
