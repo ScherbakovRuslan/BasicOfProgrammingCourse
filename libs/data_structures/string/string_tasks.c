@@ -496,3 +496,33 @@ void test_lastWordInFirstStringInSecondString_EmptyString() {
     wordDescriptorToString(word, string);
     ASSERT_STRING ("", string);
 }
+
+bool isEqualWord(char *s) {
+    getBagOfWords(&_bag, s);
+    for (int i = 0; i < _bag.size; i++) {
+        for (int j = i + 1; j < _bag.size; j++) {
+            if (areWordsEqual(_bag.words[i], _bag.words[j]) == 1) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+void test_isEqualWord_CommonCase() {
+    char s[] = "vse vse ok";
+
+    assert(isEqualWord(s) == true);
+}
+
+void test_isEqualWord_NoEqual() {
+    char s[] = "vse ok";
+
+    assert(isEqualWord(s) == false);
+}
+
+void test_isEqualWord_EmptyString() {
+    char s[] = "";
+
+    assert(isEqualWord(s) == false);
+}

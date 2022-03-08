@@ -12,8 +12,9 @@
 #include "libs/data_structures/string/string_tasks.h"
 
 int main() {
-    test_lastWordInFirstStringInSecondString_CommonCase();
-    test_lastWordInFirstStringInSecondString_EmptyString();
+    test_isEqualWord_CommonCase();
+    test_isEqualWord_NoEqual();
+    test_isEqualWord_EmptyString();
 
     return 0;
 }

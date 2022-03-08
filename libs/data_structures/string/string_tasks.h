@@ -117,4 +117,13 @@ void test_lastWordInFirstStringInSecondString_CommonCase();
 
 void test_lastWordInFirstStringInSecondString_EmptyString();
 
+// Определить, есть ли в данной строке одинаковые слова.
+bool isEqualWord(char *s);
+
+void test_isEqualWord_CommonCase();
+
+void test_isEqualWord_NoEqual();
+
+void test_isEqualWord_EmptyString();
+
 #endif //INC_1_STRING_TASKS_H
