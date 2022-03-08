@@ -338,3 +338,53 @@ void test_nOfPalindromeWords_emptyWords() {
 
     assert(countPalindromeInString(s) == 0);
 }
+
+void unionString(char *s1, char *s2, char *s) {
+    if (*s1 == '\0' && *s2 == '\0') {
+        *s = '\0';
+        return;
+    }
+
+    WordDescriptor word1, word2;
+    bool isW1Found, isW2Found;
+    char *beginSearch1 = s1, *beginSearch2 = s2;
+    while ((isW1Found = getWord(beginSearch1, &word1)),
+            (isW2Found = getWord(beginSearch2, &word2)),
+            isW1Found || isW2Found) {
+        if (isW1Found) {
+            s = copy(word1.begin, word1.end, s);
+            *s = ' ';
+            s++;
+            beginSearch1 = word1.end;
+        }
+        if (isW2Found) {
+            s = copy(word2.begin, word2.end, s);
+            *s = ' ';
+            s++;
+            beginSearch2 = word2.end;
+        }
+    }
+
+    s--;
+    *s = '\0';
+}
+
+void test_unionString_CommonCase() {
+    char s[MAX_STRING_SIZE];
+    char s1[] = "hello vse";
+    char s2[] = "world ok";
+
+    unionString(s1, s2, s);
+
+    ASSERT_STRING("hello world vse ok", s);
+}
+
+void test_unionString_AllWordsInOneString() {
+    char s[MAX_STRING_SIZE];
+    char s1[] = "";
+    char s2[] = "hello world vse ok";
+
+    unionString(s1, s2, s);
+
+    ASSERT_STRING("hello world vse ok", s);
+}

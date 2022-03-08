@@ -84,4 +84,15 @@ void test_nOfPalindromeWords_NoPalindromes();
 
 void test_nOfPalindromeWords_emptyWords();
 
+// Даны две строки. Получить строку, в которой
+// чередуются слова первой и второй строки.
+// Если в одной из строк число слов больше, чем
+// в другой, то оставшиеся слова этой строки должны
+// быть дописаны в строку-результат
+void unionString(char *s1, char *s2, char *s);
+
+void test_unionString_CommonCase();
+
+void test_unionString_AllWordsInOneString();
+
 #endif //INC_1_STRING_TASKS_H

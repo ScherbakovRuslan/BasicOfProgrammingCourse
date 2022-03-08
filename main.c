@@ -12,9 +12,8 @@
 #include "libs/data_structures/string/string_tasks.h"
 
 int main() {
-    test_nOfPalindromeWords_commonCase();
-    test_nOfPalindromeWords_NoPalindromes();
-    test_nOfPalindromeWords_emptyWords();
+    test_unionString_CommonCase();
+    test_unionString_AllWordsInOneString();
 
     return 0;
 }
