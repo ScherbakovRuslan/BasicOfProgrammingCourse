@@ -183,7 +183,7 @@ int areWordsEqual(WordDescriptor w1,
         begin2++;
     }
 
-    return *begin1  - *begin2;
+    return *begin1 - *begin2;
 }
 
 // Определить, упорядочены ли лексикографически слова данного предложения
@@ -598,28 +598,28 @@ void test_getStringOfWordsDifferentLastWord_CommonCase() {
     char s[] = "world vse ok world";
 
     getStringOfWordsDifferentLastWord(s);
-    ASSERT_STRING("vse ok",  s);
+    ASSERT_STRING("vse ok", s);
 }
 
 void test_getStringOfWordsDifferentLastWord_OneWord() {
     char s[] = "world";
 
     getStringOfWordsDifferentLastWord(s);
-    ASSERT_STRING("",  s);
+    ASSERT_STRING("", s);
 }
 
 void test_getStringOfWordsDifferentLastWord_EmptyString() {
     char s[] = "";
 
     getStringOfWordsDifferentLastWord(s);
-    ASSERT_STRING("",  s);
+    ASSERT_STRING("", s);
 }
 
 void test_getStringOfWordsDifferentLastWord_AllSpace() {
     char s[] = "   ";
 
     getStringOfWordsDifferentLastWord(s);
-    ASSERT_STRING("",  s);
+    ASSERT_STRING("", s);
 }
 
 // Удалить из данной строки слова-палиндромы
