@@ -67,4 +67,11 @@ void test_isLexicallyOrderedSentence_onlySpaces();
 
 void test_isLexicallyOrderedSentence_notOrdered();
 
+// получает позиции начала и конца каждого слова строки
+void getBagOfWords(BagOfWords *bag, char *s);
+
+void test_getBagOfWords_CommonCase();
+
+void test_getBagOfWords_AllSpace();
+
 #endif //INC_1_STRING_TASKS_H

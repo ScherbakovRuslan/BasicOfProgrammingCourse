@@ -254,3 +254,32 @@ void test_isLexicallyOrderedSentence_notOrdered() {
 
     assert(!isLexicallyOrderedSentence(s));
 }
+
+void getBagOfWords(BagOfWords *bag, char *s) {
+    char *beginSearch = s;
+    bag->size = 0;
+    WordDescriptor curWord;
+
+    while(getWord(beginSearch, &curWord)) {
+        bag->words[bag->size] = curWord;
+        beginSearch = curWord.end;
+
+        bag->size++;
+    }
+}
+
+void test_getBagOfWords_CommonCase() {
+    char s[] = "hello world";
+    BagOfWords bag;
+    getBagOfWords(&bag, s);
+
+    assert(bag.size == 2);
+}
+
+void test_getBagOfWords_AllSpace() {
+    char s[] = "   ";
+    BagOfWords bag;
+    getBagOfWords(&bag, s);
+
+    assert(bag.size == 0);
+}

@@ -12,9 +12,8 @@
 #include "libs/data_structures/string/string_tasks.h"
 
 int main() {
-    test_isLexicallyOrderedSentence_CommonCase();
-    test_isLexicallyOrderedSentence_onlySpaces();
-    test_isLexicallyOrderedSentence_notOrdered();
+    test_getBagOfWords_CommonCase();
+    test_getBagOfWords_AllSpace();
 
     return 0;
 }
