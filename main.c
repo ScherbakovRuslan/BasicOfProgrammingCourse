@@ -19,6 +19,9 @@ int main() {
     test_task2_OneSpace();
     test_digitToStartForEveryWord_CommonCase();
     test_digitToStartForEveryWord_digitsInWord();
+    test_numberTurnIntoSpaces_CommonCase();
+    test_numberTurnIntoSpaces_OnlyDigits();
+    test_numberTurnIntoSpaces_OnlyLetters();
 
     return 0;
 }

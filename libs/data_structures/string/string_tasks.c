@@ -127,3 +127,46 @@ void test_digitToStartForEveryWord_digitsInWord() {
 
     ASSERT_STRING("5665fkkh 84309sglv", s);
 }
+
+void replacingNumberWithSpaces(char *s) {
+    char *beginBuffer = _stringBuffer;
+    char *endBuffer = copy(s, s + strlen_(s), _stringBuffer);
+
+    while(beginBuffer < endBuffer) {
+        if(isdigit(*beginBuffer)) {
+            for(int i = 0; i < *beginBuffer - '0'; i++) {
+                *s = ' ';
+                s++;
+            }
+        } else {
+            *s = *beginBuffer;
+            s++;
+        }
+        beginBuffer++;
+    }
+
+    *s = '\0';
+}
+
+void test_numberTurnIntoSpaces_CommonCase() {
+    char s[] = "g1fp2d3f";
+    replacingNumberWithSpaces(s);
+
+    ASSERT_STRING("g fp  d   f", s);
+}
+
+void test_numberTurnIntoSpaces_OnlyDigits() {
+    char s[] = "36";
+    replacingNumberWithSpaces(s);
+
+    ASSERT_STRING("         ", s);
+}
+
+void test_numberTurnIntoSpaces_OnlyLetters() {
+    char s[] = "vseOk";
+    replacingNumberWithSpaces(s);
+
+    ASSERT_STRING("vseOk", s);
+}
+
+

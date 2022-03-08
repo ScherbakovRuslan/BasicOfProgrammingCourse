@@ -39,4 +39,12 @@ void test_digitToStartForEveryWord_CommonCase();
 
 void test_digitToStartForEveryWord_digitsInWord();
 
+void replacingNumberWithSpaces(char *s);
+
+void test_numberTurnIntoSpaces_CommonCase();
+
+void test_numberTurnIntoSpaces_OnlyDigits();
+
+void test_numberTurnIntoSpaces_OnlyLetters();
+
 #endif //INC_1_STRING_TASKS_H
