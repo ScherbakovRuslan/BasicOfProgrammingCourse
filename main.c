@@ -12,10 +12,7 @@
 #include "libs/data_structures/string/string_tasks.h"
 
 int main() {
-    test_getStringOfWordsDifferentLastWord_CommonCase();
-    test_getStringOfWordsDifferentLastWord_OneWord();
-    test_getStringOfWordsDifferentLastWord_EmptyString();
-    test_getStringOfWordsDifferentLastWord_AllSpace();
+    testAll_TaskString();
 
     return 0;
 }

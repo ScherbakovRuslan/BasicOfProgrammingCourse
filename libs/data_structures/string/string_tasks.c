@@ -96,6 +96,9 @@ int getWord(char *beginSearch, WordDescriptor *word) {
     return 1;
 }
 
+// Преобразовать строку таким образом, чтобы цифры каждого слова были
+// перенесены в начало слова без изменения порядка следования их в слове,
+// буквы перенести в конец слова.
 void digitToStartWithSavingOrder(WordDescriptor word) {
     char *endStringBuffer = copy(word.begin, word.end,
                                  _stringBuffer);
@@ -128,6 +131,8 @@ void test_digitToStartForEveryWord_digitsInWord() {
     ASSERT_STRING("5665fkkh 84309sglv", s);
 }
 
+// Преобразовать строку, заменяя каждую цифру соответствующим ей числом
+// пробелов
 void replacingNumberWithSpaces(char *s) {
     char *beginBuffer = _stringBuffer;
     char *endBuffer = copy(s, s + strlen_(s), _stringBuffer);
@@ -169,33 +174,6 @@ void test_numberTurnIntoSpaces_OnlyLetters() {
     ASSERT_STRING("vseOk", s);
 }
 
-void replace(char *source, char *w1, char *w2) {
-    size_t w1Size = strlen_(w1);
-    size_t w2Size = strlen_(w2);
-    WordDescriptor word1 = {w1, w1 + w1Size};
-    WordDescriptor word2 = {w2, w2 + w2Size};
-
-    char *readPtr, *recPtr;
-    if (w1Size >= w2Size) {
-        readPtr = source;
-        recPtr = source;
-    } else {
-        copy(source, getEndOfString(source), _stringBuffer);
-        readPtr = _stringBuffer;
-        recPtr = source;
-    }
-
-}
-
-void test_replace_CommonCase() {
-    char s[] = "ne ok";
-    char w1[] = "ne";
-    char w2[] = "vse";
-    replace(s, w1, w2);
-
-    ASSERT_STRING("vse ok", s);
-}
-
 int areWordsEqual(WordDescriptor w1,
                   WordDescriptor w2) {
     char *begin1 = w1.begin;
@@ -208,6 +186,7 @@ int areWordsEqual(WordDescriptor w1,
     return *begin1  - *begin2;
 }
 
+// Определить, упорядочены ли лексикографически слова данного предложения
 bool isLexicallyOrderedSentence(char *s) {
     char *beginSearch = s;
     WordDescriptor curWord;
@@ -220,7 +199,7 @@ bool isLexicallyOrderedSentence(char *s) {
     beginSearch = lastWord.end;
 
     while (getWord(beginSearch, &curWord)) {
-        if (areWordsEqual(lastWord, curWord) > 0) {
+        if (areWordsEqual(lastWord, curWord) == 0) {
             return false;
         }
 
@@ -249,6 +228,7 @@ void test_isLexicallyOrderedSentence_notOrdered() {
     assert(!isLexicallyOrderedSentence(s));
 }
 
+// получает позиции начала и конца каждого слова строки
 void getBagOfWords(BagOfWords *bag, char *s) {
     char *beginSearch = s;
     bag->size = 0;
@@ -278,7 +258,7 @@ void test_getBagOfWords_AllSpace() {
     assert(bag.size == 0);
 }
 
-bool isPalindrome_(char *begin, char *end) {
+bool isPalindrome(char *begin, char *end) {
     if (begin != end) {
         end--;
         while (begin < end) {
@@ -295,6 +275,7 @@ bool isPalindrome_(char *begin, char *end) {
     return false;
 }
 
+// Определить количество слов-палиндромов.
 size_t countPalindromeInString(char *s) {
     char *beginSearch = s;
     char *end = getEndOfString(s);
@@ -303,7 +284,7 @@ size_t countPalindromeInString(char *s) {
 
     while (*beginSearch != *end) {
         beginSearch = findNonSpace(beginSearch);
-        if (isPalindrome_(beginSearch, iComma)) {
+        if (isPalindrome(beginSearch, iComma)) {
             countPalindromes++;
         }
 
@@ -333,6 +314,11 @@ void test_nOfPalindromeWords_emptyWords() {
     assert(countPalindromeInString(s) == 0);
 }
 
+// Даны две строки. Получить строку, в которой
+// чередуются слова первой и второй строки.
+// Если в одной из строк число слов больше, чем
+// в другой, то оставшиеся слова этой строки должны
+// быть дописаны в строку-результат
 void unionString(char *s1, char *s2, char *s) {
     if (*s1 == '\0' && *s2 == '\0') {
         *s = '\0';
@@ -420,6 +406,8 @@ WordBeforeFirstWordWithAReturnCode getWordBeforeFirstWordWithA(char *s,
     return NOT_FOUND_A_WORD_WITH_A;
 }
 
+// Вывести слово данной строки, предшествующее первому из слов,
+// содержащих букву "а"
 void printWordBeforeFirstWordWithA(char *s) {
     char *begin = s;
     char *beginWordBefore, *endWordBefore;
@@ -460,6 +448,8 @@ void wordDescriptorToString(WordDescriptor word, char *destination) {
     *destination = '\0';
 }
 
+// Определить последнее из слов первой строки,
+// которое есть во второй строке
 WordDescriptor lastWordInFirstStringInSecondString(char *s1, char *s2) {
     getBagOfWords(&_bag, s1);
     getBagOfWords(&_bag2, s2);
@@ -492,11 +482,12 @@ void test_lastWordInFirstStringInSecondString_EmptyString() {
     ASSERT_STRING ("", string);
 }
 
+// Определить, есть ли в данной строке одинаковые слова.
 bool isEqualWord(char *s) {
     getBagOfWords(&_bag, s);
     for (int i = 0; i < _bag.size; i++) {
         for (int j = i + 1; j < _bag.size; j++) {
-            if (areWordsEqual(_bag.words[i], _bag.words[j]) == 1) {
+            if (areWordsEqual(_bag.words[i], _bag.words[j]) == 0) {
                 return true;
             }
         }
@@ -580,6 +571,7 @@ int getWordReverse(char *rbegin, char *rend, WordDescriptor *word) {
     return true;
 }
 
+// Получить строку из слов данной строки, которые отличны от последнего слова
 void getStringOfWordsDifferentLastWord(char *s) {
     WordDescriptor lastWord;
     getWordReverse(getEndOfString(s) - 1, s - 1, &lastWord);
@@ -628,4 +620,76 @@ void test_getStringOfWordsDifferentLastWord_AllSpace() {
 
     getStringOfWordsDifferentLastWord(s);
     ASSERT_STRING("",  s);
+}
+
+// Удалить из данной строки слова-палиндромы
+void deletePalindrome(char *s) {
+    char *beginSearch = s;
+    char *sCopy = s;
+    WordDescriptor curWord;
+
+    while (getWord(beginSearch, &curWord)) {
+        if (!isPalindrome(curWord.begin, curWord.end)) {
+            sCopy = copy(curWord.begin, curWord.end, sCopy);
+            *sCopy = ' ';
+            sCopy++;
+        }
+        beginSearch = curWord.end;
+    }
+
+    if (sCopy != s) {
+        sCopy--;
+    }
+    *sCopy = '\0';
+}
+
+void test_deletePalindrome_CommonCase() {
+    char s[] = "dvd vse ok";
+    deletePalindrome(s);
+
+    ASSERT_STRING("vse ok", s);
+}
+
+void test_deletePalindrome_EmptyString() {
+    char s[] = "";
+    deletePalindrome(s);
+
+    ASSERT_STRING("", s);
+}
+
+void testAll_TaskString() {
+    test_task1_CommonCase();
+    test_task1_AllSpace();
+    test_task2_CommonCase();
+    test_task2_OneSpace();
+    test_digitToStartForEveryWord_CommonCase();
+    test_digitToStartForEveryWord_digitsInWord();
+    test_numberTurnIntoSpaces_CommonCase();
+    test_numberTurnIntoSpaces_OnlyDigits();
+    test_numberTurnIntoSpaces_OnlyLetters();
+    test_isLexicallyOrderedSentence_CommonCase();
+    test_isLexicallyOrderedSentence_onlySpaces();
+    test_isLexicallyOrderedSentence_notOrdered();
+    test_getBagOfWords_CommonCase();
+    test_getBagOfWords_AllSpace();
+    test_nOfPalindromeWords_commonCase();
+    test_nOfPalindromeWords_NoPalindromes();
+    test_nOfPalindromeWords_emptyWords();
+    test_unionString_CommonCase();
+    test_unionString_AllWordsInOneString();
+    testAll_getWordBeforeFirstWordWithA();
+    test_lastWordInFirstStringInSecondString_CommonCase();
+    test_lastWordInFirstStringInSecondString_EmptyString();
+    test_isEqualWord_CommonCase();
+    test_isEqualWord_NoEqual();
+    test_isEqualWord_EmptyString();
+    test_isPairWordsFromSameLetters_CommonCase();
+    test_isPairWordsFromSameLetters_EmptyString();
+    test_isPairWordsFromSameLetters_AllSpace();
+    test_getStringOfWordsDifferentLastWord_CommonCase();
+    test_getStringOfWordsDifferentLastWord_OneWord();
+    test_getStringOfWordsDifferentLastWord_EmptyString();
+    test_getStringOfWordsDifferentLastWord_AllSpace();
+    test_deletePalindrome_CommonCase();
+    test_deletePalindrome_EmptyString();
 }

@@ -50,11 +50,6 @@ void test_numberTurnIntoSpaces_OnlyDigits();
 
 void test_numberTurnIntoSpaces_OnlyLetters();
 
-// Заменить все вхождения слова 𝑤1 на слово 𝑤2
-void replace(char *source, char *w1, char *w2);
-
-void test_replace_CommonCase();
-
 int areWordsEqual(WordDescriptor w1,
                   WordDescriptor w2);
 
@@ -74,7 +69,8 @@ void test_getBagOfWords_CommonCase();
 
 void test_getBagOfWords_AllSpace();
 
-// В данной строке соседние слова разделены запятыми.
+bool isPalindrome(char *begin, char *end);
+
 // Определить количество слов-палиндромов.
 size_t countPalindromeInString(char *s);
 
@@ -146,5 +142,14 @@ void test_getStringOfWordsDifferentLastWord_OneWord();
 void test_getStringOfWordsDifferentLastWord_EmptyString();
 
 void test_getStringOfWordsDifferentLastWord_AllSpace();
+
+// Удалить из данной строки слова-палиндромы
+void deletePalindrome(char *s);
+
+void test_deletePalindrome_CommonCase();
+
+void test_deletePalindrome_EmptyString();
+
+void testAll_TaskString();
 
 #endif //INC_1_STRING_TASKS_H
