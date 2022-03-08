@@ -18,8 +18,8 @@ char *find(char *begin, char *end, int ch) {
     return begin;
 }
 
-char* findNonSpace(char *begin) {
-    while(isspace(*begin)) {
+char *findNonSpace(char *begin) {
+    while (isspace(*begin)) {
         begin++;
     }
 

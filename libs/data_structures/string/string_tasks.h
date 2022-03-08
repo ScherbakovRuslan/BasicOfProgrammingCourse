@@ -136,4 +136,15 @@ void test_isPairWordsFromSameLetters_EmptyString();
 
 void test_isPairWordsFromSameLetters_AllSpace();
 
+// Получить строку из слов данной строки, которые отличны от последнего слова
+void getStringOfWordsDifferentLastWord(char *s);
+
+void test_getStringOfWordsDifferentLastWord_CommonCase();
+
+void test_getStringOfWordsDifferentLastWord_OneWord();
+
+void test_getStringOfWordsDifferentLastWord_EmptyString();
+
+void test_getStringOfWordsDifferentLastWord_AllSpace();
+
 #endif //INC_1_STRING_TASKS_H

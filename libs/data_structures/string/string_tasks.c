@@ -198,19 +198,14 @@ void test_replace_CommonCase() {
 
 int areWordsEqual(WordDescriptor w1,
                   WordDescriptor w2) {
-    if (w1.end - w1.begin != w2.end - w2.begin) {
-        return 0;
+    char *begin1 = w1.begin;
+    char *begin2 = w2.begin;
+    while (*begin1 == *begin2 && (begin1 < w1.end - 1 || begin2 < w2.end - 1)) {
+        begin1++;
+        begin2++;
     }
 
-    while (*w1.begin != *w1.end) {
-        if (*w1.begin != *w2.begin) {
-            return 0;
-        }
-        w1.begin++;
-        w2.begin++;
-    }
-
-    return 1;
+    return *begin1  - *begin2;
 }
 
 bool isLexicallyOrderedSentence(char *s) {
@@ -565,4 +560,72 @@ void test_isPairWordsFromSameLetters_AllSpace() {
     char s[] = "   ";
 
     assert(isPairWordsFromSameLetters(s) == false);
+}
+
+char *findSpaceReverse(char *rbegin, const char *rend) {
+    while (rbegin != rend && !isspace(*rbegin))
+        rbegin--;
+
+    return rbegin;
+}
+
+int getWordReverse(char *rbegin, char *rend, WordDescriptor *word) {
+    word->end = findNonSpaceReverse(rbegin, rend) + 1;
+
+    if (word->end == rend) {
+        return false;
+    }
+    word->begin = findSpaceReverse(rbegin, rend) + 1;
+
+    return true;
+}
+
+void getStringOfWordsDifferentLastWord(char *s) {
+    WordDescriptor lastWord;
+    getWordReverse(getEndOfString(s) - 1, s - 1, &lastWord);
+    char *beginSearch = s;
+    char *sCopy = s;
+    WordDescriptor curWord;
+
+    while (getWord(beginSearch, &curWord)) {
+        if (areWordsEqual(curWord, lastWord)) {
+            sCopy = copy(curWord.begin, curWord.end, sCopy);
+            *sCopy = ' ';
+            sCopy++;
+        }
+        beginSearch = curWord.end;
+    }
+
+    if (sCopy != s) {
+        sCopy--;
+    }
+    *sCopy = '\0';
+}
+
+void test_getStringOfWordsDifferentLastWord_CommonCase() {
+    char s[] = "world vse ok world";
+
+    getStringOfWordsDifferentLastWord(s);
+    ASSERT_STRING("vse ok",  s);
+}
+
+void test_getStringOfWordsDifferentLastWord_OneWord() {
+    char s[] = "world";
+
+    getStringOfWordsDifferentLastWord(s);
+    ASSERT_STRING("",  s);
+}
+
+void test_getStringOfWordsDifferentLastWord_EmptyString() {
+    char s[] = "";
+
+    getStringOfWordsDifferentLastWord(s);
+    ASSERT_STRING("",  s);
+}
+
+void test_getStringOfWordsDifferentLastWord_AllSpace() {
+    char s[] = "   ";
+
+    getStringOfWordsDifferentLastWord(s);
+    ASSERT_STRING("",  s);
 }
