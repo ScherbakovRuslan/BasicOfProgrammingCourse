@@ -95,4 +95,16 @@ void test_unionString_CommonCase();
 
 void test_unionString_AllWordsInOneString();
 
+WordBeforeFirstWordWithAReturnCode getWordBeforeFirstWordWithA(char *s,
+                                                               char **beginWordBefore,
+                                                               char **endWordBefore);
+
+bool aInWord(WordDescriptor w);
+
+// Вывести слово данной строки, предшествующее первому из слов,
+// содержащих букву "а"
+void printWordBeforeFirstWordWithA(char *s);
+
+void testAll_getWordBeforeFirstWordWithA();
+
 #endif //INC_1_STRING_TASKS_H

@@ -12,8 +12,7 @@
 #include "libs/data_structures/string/string_tasks.h"
 
 int main() {
-    test_unionString_CommonCase();
-    test_unionString_AllWordsInOneString();
+    testAll_getWordBeforeFirstWordWithA();
 
     return 0;
 }
