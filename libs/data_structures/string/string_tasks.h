@@ -126,4 +126,14 @@ void test_isEqualWord_NoEqual();
 
 void test_isEqualWord_EmptyString();
 
+int cmp_char(const void *a, const void *b);
+
+bool isPairWordsFromSameLetters(char *s);
+
+void test_isPairWordsFromSameLetters_CommonCase();
+
+void test_isPairWordsFromSameLetters_EmptyString();
+
+void test_isPairWordsFromSameLetters_AllSpace();
+
 #endif //INC_1_STRING_TASKS_H

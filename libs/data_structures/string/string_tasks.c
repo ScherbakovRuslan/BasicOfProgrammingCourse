@@ -526,3 +526,43 @@ void test_isEqualWord_EmptyString() {
 
     assert(isEqualWord(s) == false);
 }
+
+int cmp_char(const void *a, const void *b) {
+    char arg1 = *(const char *) a;
+    char arg2 = *(const char *) b;
+
+    if (arg1 < arg2) return -1;
+    if (arg1 > arg2) return 1;
+
+    return 0;
+}
+
+bool isPairWordsFromSameLetters(char *s) {
+    char *endBuffer = copy(s, getEndOfString(s), _stringBuffer);
+    *endBuffer = '\0';
+    getBagOfWords(&_bag, _stringBuffer);
+    for (int i = 0; i < _bag.size; i++) {
+        qsort(_bag.words[i].begin, _bag.words[i].end - _bag.words[i].begin,
+              sizeof(char), cmp_char);
+    }
+
+    return isEqualWord(_stringBuffer);
+}
+
+void test_isPairWordsFromSameLetters_CommonCase() {
+    char s[] = "vce cev";
+
+    assert(isPairWordsFromSameLetters(s) == true);
+}
+
+void test_isPairWordsFromSameLetters_EmptyString() {
+    char s[] = "";
+
+    assert(isPairWordsFromSameLetters(s) == false);
+}
+
+void test_isPairWordsFromSameLetters_AllSpace() {
+    char s[] = "   ";
+
+    assert(isPairWordsFromSameLetters(s) == false);
+}

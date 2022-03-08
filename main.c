@@ -12,9 +12,9 @@
 #include "libs/data_structures/string/string_tasks.h"
 
 int main() {
-    test_isEqualWord_CommonCase();
-    test_isEqualWord_NoEqual();
-    test_isEqualWord_EmptyString();
+    test_isPairWordsFromSameLetters_CommonCase();
+    test_isPairWordsFromSameLetters_EmptyString();
+    test_isPairWordsFromSameLetters_AllSpace();
 
     return 0;
 }
