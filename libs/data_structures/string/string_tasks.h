@@ -74,4 +74,14 @@ void test_getBagOfWords_CommonCase();
 
 void test_getBagOfWords_AllSpace();
 
+// В данной строке соседние слова разделены запятыми.
+// Определить количество слов-палиндромов.
+size_t countPalindromeInString(char *s);
+
+void test_nOfPalindromeWords_commonCase();
+
+void test_nOfPalindromeWords_NoPalindromes();
+
+void test_nOfPalindromeWords_emptyWords();
+
 #endif //INC_1_STRING_TASKS_H

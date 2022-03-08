@@ -283,3 +283,58 @@ void test_getBagOfWords_AllSpace() {
 
     assert(bag.size == 0);
 }
+
+bool isPalindrome_(char *begin, char *end) {
+    if (begin != end) {
+        end--;
+        while (begin < end) {
+            if (*begin != *end) {
+                return false;
+            }
+
+            begin++;
+            end--;
+        }
+        return true;
+    }
+
+    return false;
+}
+
+size_t countPalindromeInString(char *s) {
+    char *beginSearch = s;
+    char *end = getEndOfString(s);
+    size_t countPalindromes = 0;
+    char *iComma = find(beginSearch, end, ',');
+
+    while (*beginSearch != *end) {
+        beginSearch = findNonSpace(beginSearch);
+        if(isPalindrome_(beginSearch, iComma)) {
+            countPalindromes++;
+        }
+
+        beginSearch = iComma + 1;
+
+        iComma = find(beginSearch, end, ',');
+    }
+
+    return countPalindromes;
+}
+
+void test_nOfPalindromeWords_commonCase() {
+    char *s = "dgd, hello, dvd, world";
+
+    assert(countPalindromeInString(s) == 2);
+}
+
+void test_nOfPalindromeWords_NoPalindromes() {
+    char *s = "leon, shelli, bull";
+
+    assert(countPalindromeInString(s) == 0);
+}
+
+void test_nOfPalindromeWords_emptyWords() {
+    char *s = "     ,  , ,      ";
+
+    assert(countPalindromeInString(s) == 0);
+}

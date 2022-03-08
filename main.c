@@ -12,8 +12,9 @@
 #include "libs/data_structures/string/string_tasks.h"
 
 int main() {
-    test_getBagOfWords_CommonCase();
-    test_getBagOfWords_AllSpace();
+    test_nOfPalindromeWords_commonCase();
+    test_nOfPalindromeWords_NoPalindromes();
+    test_nOfPalindromeWords_emptyWords();
 
     return 0;
 }
