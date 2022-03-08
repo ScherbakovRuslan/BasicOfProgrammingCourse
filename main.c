@@ -12,16 +12,9 @@
 #include "libs/data_structures/string/string_tasks.h"
 
 int main() {
-    test_string();
-    test_task1_CommonCase();
-    test_task1_AllSpace();
-    test_task2_CommonCase();
-    test_task2_OneSpace();
-    test_digitToStartForEveryWord_CommonCase();
-    test_digitToStartForEveryWord_digitsInWord();
-    test_numberTurnIntoSpaces_CommonCase();
-    test_numberTurnIntoSpaces_OnlyDigits();
-    test_numberTurnIntoSpaces_OnlyLetters();
+    test_isLexicallyOrderedSentence_CommonCase();
+    test_isLexicallyOrderedSentence_onlySpaces();
+    test_isLexicallyOrderedSentence_notOrdered();
 
     return 0;
 }

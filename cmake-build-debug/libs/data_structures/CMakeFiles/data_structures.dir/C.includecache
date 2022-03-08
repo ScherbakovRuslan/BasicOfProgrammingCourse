@@ -19,8 +19,12 @@ ctype.h
 -
 string.h
 -
+assert.h
+-
 
 C:/C/git bash/1/libs/data_structures/string/string_tasks.h
 string_.h
 C:/C/git bash/1/libs/data_structures/string/string_.h
+stdbool.h
+-
 

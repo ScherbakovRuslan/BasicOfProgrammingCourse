@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
+#include <assert.h>
 
 #define ASSERT_STRING(expected, got) assertString (expected, got , \
 __FILE__, __FUNCTION__, __LINE__ )
@@ -20,7 +21,7 @@ void assertString(const char *expected, char *got,
 }
 
 char *getEndOfString(char *s) {
-    while(*s != '\0') {
+    while (*s != '\0') {
         s++;
     }
 
@@ -89,7 +90,7 @@ void test_task2_OneSpace() {
 int getWord(char *beginSearch, WordDescriptor *word) {
     word->begin = findNonSpace(beginSearch);
     if (*word->begin == '\0')
-    return 0;
+        return 0;
 
     word->end = findSpace(word->begin);
 
@@ -132,9 +133,9 @@ void replacingNumberWithSpaces(char *s) {
     char *beginBuffer = _stringBuffer;
     char *endBuffer = copy(s, s + strlen_(s), _stringBuffer);
 
-    while(beginBuffer < endBuffer) {
-        if(isdigit(*beginBuffer)) {
-            for(int i = 0; i < *beginBuffer - '0'; i++) {
+    while (beginBuffer < endBuffer) {
+        if (isdigit(*beginBuffer)) {
+            for (int i = 0; i < *beginBuffer - '0'; i++) {
                 *s = ' ';
                 s++;
             }
@@ -169,4 +170,87 @@ void test_numberTurnIntoSpaces_OnlyLetters() {
     ASSERT_STRING("vseOk", s);
 }
 
+void replace(char *source, char *w1, char *w2) {
+    size_t w1Size = strlen_(w1);
+    size_t w2Size = strlen_(w2);
+    WordDescriptor word1 = {w1, w1 + w1Size};
+    WordDescriptor word2 = {w2, w2 + w2Size};
 
+    char *readPtr, *recPtr;
+    if (w1Size >= w2Size) {
+        readPtr = source;
+        recPtr = source;
+    } else {
+        copy(source, getEndOfString(source), _stringBuffer);
+        readPtr = _stringBuffer;
+        recPtr = source;
+    }
+
+}
+
+void test_replace_CommonCase() {
+    char s[] = "ne ok";
+    char w1[] = "ne";
+    char w2[] = "vse";
+    replace(s, w1, w2);
+
+    ASSERT_STRING("vse ok", s);
+}
+
+int areWordsEqual(WordDescriptor w1,
+                  WordDescriptor w2) {
+    if(w1.end - w1.begin != w2.end - w2.begin) {
+        return 0;
+    }
+
+    while (*w1.begin != *w1.end) {
+        if(*w1.begin != *w2.begin) {
+            return 0;
+        }
+        w1.begin++;
+        w2.begin++;
+    }
+
+    return 1;
+}
+
+bool isLexicallyOrderedSentence(char *s) {
+    char *beginSearch = s;
+    WordDescriptor curWord;
+
+    if (!getWord(beginSearch, &curWord)) {
+        return true;
+    }
+
+    WordDescriptor lastWord = curWord;
+    beginSearch = lastWord.end;
+
+    while (getWord(beginSearch, &curWord)) {
+        if (areWordsEqual(lastWord, curWord) > 0) {
+            return false;
+        }
+
+        lastWord = curWord;
+        beginSearch = curWord.end;
+    }
+
+    return true;
+}
+
+void test_isLexicallyOrderedSentence_CommonCase() {
+    char s[] = "avse bvse vse";
+
+    assert(isLexicallyOrderedSentence(s));
+}
+
+void test_isLexicallyOrderedSentence_onlySpaces() {
+    char s[] = "        ";
+
+    assert(isLexicallyOrderedSentence(s));
+}
+
+void test_isLexicallyOrderedSentence_notOrdered() {
+    char s[] = "vse vse";
+
+    assert(!isLexicallyOrderedSentence(s));
+}
