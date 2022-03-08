@@ -7,7 +7,6 @@
 #define ASSERT_STRING(expected, got) assertString (expected, got , \
 __FILE__, __FUNCTION__, __LINE__ )
 
-
 void assertString(const char *expected, char *got,
                   char const *fileName, char const *funcName,
                   int line) {
@@ -199,12 +198,12 @@ void test_replace_CommonCase() {
 
 int areWordsEqual(WordDescriptor w1,
                   WordDescriptor w2) {
-    if(w1.end - w1.begin != w2.end - w2.begin) {
+    if (w1.end - w1.begin != w2.end - w2.begin) {
         return 0;
     }
 
     while (*w1.begin != *w1.end) {
-        if(*w1.begin != *w2.begin) {
+        if (*w1.begin != *w2.begin) {
             return 0;
         }
         w1.begin++;
@@ -260,7 +259,7 @@ void getBagOfWords(BagOfWords *bag, char *s) {
     bag->size = 0;
     WordDescriptor curWord;
 
-    while(getWord(beginSearch, &curWord)) {
+    while (getWord(beginSearch, &curWord)) {
         bag->words[bag->size] = curWord;
         beginSearch = curWord.end;
 
@@ -309,7 +308,7 @@ size_t countPalindromeInString(char *s) {
 
     while (*beginSearch != *end) {
         beginSearch = findNonSpace(beginSearch);
-        if(isPalindrome_(beginSearch, iComma)) {
+        if (isPalindrome_(beginSearch, iComma)) {
             countPalindromes++;
         }
 
@@ -390,8 +389,8 @@ void test_unionString_AllWordsInOneString() {
 }
 
 bool aInWord(WordDescriptor w) {
-    while(w.begin != w.end) {
-        if(*w.begin == 'a' || *w.begin == 'A') {
+    while (w.begin != w.end) {
+        if (*w.begin == 'a' || *w.begin == 'A') {
             return true;
         }
         w.begin++;
@@ -459,4 +458,41 @@ void testAll_getWordBeforeFirstWordWithA() {
     char s4[] = "B Q WE YR OW IUWR ";
     assert (getWordBeforeFirstWordWithA(s4, &beginWord, &endWord) ==
             NOT_FOUND_A_WORD_WITH_A);
+}
+
+void wordDescriptorToString(WordDescriptor word, char *destination) {
+    destination = copy(word.begin, word.end, destination);
+    *destination = '\0';
+}
+
+WordDescriptor lastWordInFirstStringInSecondString(char *s1, char *s2) {
+    getBagOfWords(&_bag, s1);
+    getBagOfWords(&_bag2, s2);
+    WordDescriptor word = {0, 0};
+    for (int i = _bag.size - 1; i >= 0; i--)
+        for (int j = _bag2.size - 1; j >= 0; j--)
+            if (areWordsEqual(_bag.words[i], _bag2.words[j]) == 0) {
+                word = _bag.words[i];
+                return word;
+            }
+
+    return word;
+}
+
+void test_lastWordInFirstStringInSecondString_CommonCase() {
+    char s1[] = "hello world vce ok";
+    char s2[] = "vce ok hello world";
+    WordDescriptor word = lastWordInFirstStringInSecondString(s1, s2);
+    char string[MAX_STRING_SIZE];
+    wordDescriptorToString(word, string);
+    ASSERT_STRING ("ok", string);
+}
+
+void test_lastWordInFirstStringInSecondString_EmptyString() {
+    char s1[] = "";
+    char s2[] = "";
+    WordDescriptor word = lastWordInFirstStringInSecondString(s1, s2);
+    char string[MAX_STRING_SIZE];
+    wordDescriptorToString(word, string);
+    ASSERT_STRING ("", string);
 }

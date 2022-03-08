@@ -107,4 +107,14 @@ void printWordBeforeFirstWordWithA(char *s);
 
 void testAll_getWordBeforeFirstWordWithA();
 
+void wordDescriptorToString(WordDescriptor word, char *destination);
+
+// Определить последнее из слов первой строки,
+// которое есть во второй строке
+WordDescriptor lastWordInFirstStringInSecondString(char *s1, char *s2);
+
+void test_lastWordInFirstStringInSecondString_CommonCase();
+
+void test_lastWordInFirstStringInSecondString_EmptyString();
+
 #endif //INC_1_STRING_TASKS_H

@@ -12,7 +12,8 @@
 #include "libs/data_structures/string/string_tasks.h"
 
 int main() {
-    testAll_getWordBeforeFirstWordWithA();
+    test_lastWordInFirstStringInSecondString_CommonCase();
+    test_lastWordInFirstStringInSecondString_EmptyString();
 
     return 0;
 }
