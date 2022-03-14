@@ -23,6 +23,14 @@ typedef struct SortFunc {
     // используемое при выводе
 } SortFunc;
 
+typedef struct SortFuncNComps {
+    long long (*sort )(int *a, size_t n);
+
+    char name[64];
+
+    long long nComps;
+} SortFuncNComps;
+
 // функция генерации
 typedef struct GeneratingFunc {
     void (*generate )(int *a, size_t n);    // указатель на функцию
@@ -39,15 +47,17 @@ void checkTime(void (*sortFunc )(int *, size_t),
                void (*generateFunc )(int *, size_t),
                size_t size, char *experimentName);
 
+void checkNComps(long long (*sortFunc )(int *, size_t),
+                 void (*generateFunc )(int *, size_t),
+                 size_t size, char *experimentName);
+
+void NCompsExperiment();
+
 void generateRandomArray(int *a, size_t n);
 
 void generateOrderedArray(int *a, size_t n);
 
 void generateOrderedBackwards(int *a, size_t n);
-
-// сортировки выбором, в которой выполняется подсчёт
-// операций сравнения
-long long getSelectionSortNComp(int *a, size_t n);
 
 void swap(int *a, int *b);
 
@@ -64,5 +74,17 @@ void shellSort(int *a, size_t n);
 int digit(int n, int k, int N, int M);
 
 void radixSort(int *a, size_t n);
+
+long long getBubbleSortNComp(int *a, size_t size);
+
+long long getSelectionSortNComp(int *a, size_t size);
+
+long long getInsertionSortNComp(int *a, size_t size);
+
+long long getCombSortNComp(int *a, size_t size);
+
+long long getShellSortNComp(int *a, size_t n);
+
+long long getRadixSortNComp(int *a, size_t n);
 
 #endif //INC_1_SORTING_H

@@ -14,6 +14,7 @@
 
 int main() {
     timeExperiment();
+    NCompsExperiment();
 
     return 0;
 }
