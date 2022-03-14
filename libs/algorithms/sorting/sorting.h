@@ -57,8 +57,12 @@ void selectionSort(int *a, size_t size);
 
 void insertionSort(int *a, size_t size);
 
-void combsort(int *a, size_t size);
+void combSort(int *a, size_t size);
 
-void ShellSort(int *a, size_t n);
+void shellSort(int *a, size_t n);
+
+int digit(int n, int k, int N, int M);
+
+void radixSort(int *a, size_t n);
 
 #endif //INC_1_SORTING_H

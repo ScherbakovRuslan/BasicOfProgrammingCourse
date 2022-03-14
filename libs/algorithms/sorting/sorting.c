@@ -13,11 +13,12 @@ double getTime() {
 void timeExperiment() {
     // описание функций сортировки
     SortFunc sorts[] = {
-            {bubbleSort, "bubbleSort"},
+            {bubbleSort,    "bubbleSort"},
             {selectionSort, "selectionSort"},
             {insertionSort, "insertionSort"},
-            {combsort, "combsort"},
-            {ShellSort, "ShellSort"}
+            {combSort,      "combSort"},
+            {shellSort,     "shellSort"},
+            {radixSort, "radixSort"}
     };
     const unsigned FUNCS_N = ARRAY_SIZE(sorts);
 
@@ -148,7 +149,7 @@ void insertionSort(int *a, size_t size) {
     }
 }
 
-void combsort(int *a, const size_t size) {
+void combSort(int *a, size_t size) {
     size_t step = size;
     int swapped = 1;
     while (step > 1 || swapped) {
@@ -164,7 +165,7 @@ void combsort(int *a, const size_t size) {
     }
 }
 
-void ShellSort(int *a, size_t n) {
+void shellSort(int *a, size_t n) {
     int tmp, j;
     for (int step = n / 2; step > 0; step /= 2) {
         for (int i = step; i < n; i++) {
@@ -179,4 +180,42 @@ void ShellSort(int *a, size_t n) {
             a[j] = tmp;
         }
     }
+}
+
+int digit(int n, int k, int N, int M) {
+    return (n >> (N * k) & (M - 1));
+}
+
+void radixSort(int *a, size_t n) {
+    int *l = a;
+    int *r = a + n;
+    int N = 8;
+    int k = (32 + N - 1) / N;
+    int M = 1 << N;
+    int *b = (int *) malloc(sizeof(int) * n);
+    int *c = (int *) malloc(sizeof(int) * M);
+    for (int i = 0; i < k; i++) {
+        for (int j = 0; j < M; j++) {
+            c[j] = 0;
+        }
+
+        for (int *j = l; j < r; j++) {
+            c[digit(*j, i, N, M)]++;
+        }
+
+        for (int j = 1; j < M; j++) {
+            c[j] += c[j - 1];
+        }
+
+        for (int *j = r - 1; j >= l; j--) {
+            b[--c[digit(*j, i, N, M)]] = *j;
+        }
+
+        int cur = 0;
+        for (int *j = l; j < r; j++) {
+            *j = b[cur++];
+        }
+    }
+    free(b);
+    free(c);
 }

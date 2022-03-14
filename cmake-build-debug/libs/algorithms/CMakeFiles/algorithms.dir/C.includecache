@@ -6,43 +6,11 @@
 
 #IncludeRegexTransform: 
 
-C:/C/git bash/1/libs/algorithms/array/array.c
-stdio.h
--
-limits.h
--
-assert.h
--
-array.h
-C:/C/git bash/1/libs/algorithms/array/array.h
-
 C:/C/git bash/1/libs/algorithms/array/array.h
 stddef.h
 -
 stdbool.h
 -
-
-C:/C/git bash/1/libs/algorithms/array/unordered_array.c
-unordered_array.h
-C:/C/git bash/1/libs/algorithms/array/unordered_array.h
-
-C:/C/git bash/1/libs/algorithms/array/unordered_array.h
-stdint.h
--
-assert.h
--
-memory.h
--
-stdio.h
--
-stdbool.h
--
-malloc.h
--
-stdlib.h
--
-../../algorithms/array/array.h
-C:/C/git bash/1/libs/algorithms/array/array.h
 
 C:/C/git bash/1/libs/algorithms/sorting/sorting.c
 sorting.h
