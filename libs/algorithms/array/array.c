@@ -127,3 +127,13 @@ size_t binarySearchMoreOrEqual_(const int *a, size_t n, int x) {
     }
     return right;
 }
+
+bool isOrdered(int *a, size_t size) {
+    for(size_t i = 1; i < size; i++) {
+        if(a[i - 1] > a[i]) {
+            return false;
+        }
+    }
+
+    return true;
+}

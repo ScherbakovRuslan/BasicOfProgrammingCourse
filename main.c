@@ -10,9 +10,10 @@
 #include "libs/data_structures/string/string_.h"
 #include "libs/data_structures/string/string_test.h"
 #include "libs/data_structures/string/string_tasks.h"
+#include "libs/algorithms/sorting/sorting.h"
 
 int main() {
-    testAll_TaskString();
+    timeExperiment();
 
     return 0;
 }

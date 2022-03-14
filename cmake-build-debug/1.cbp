@@ -170,6 +170,12 @@
 		<Unit filename="C:/C/git bash/1/libs/algorithms/array/unordered_array.h">
 			<Option target="algorithms"/>
 		</Unit>
+		<Unit filename="C:/C/git bash/1/libs/algorithms/sorting/sorting.c">
+			<Option target="algorithms"/>
+		</Unit>
+		<Unit filename="C:/C/git bash/1/libs/algorithms/sorting/sorting.h">
+			<Option target="algorithms"/>
+		</Unit>
 		<Unit filename="C:/C/git bash/1/libs/data_structures/bitset/bitset.c">
 			<Option target="data_structures"/>
 		</Unit>

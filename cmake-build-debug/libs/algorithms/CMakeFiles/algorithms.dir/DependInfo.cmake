@@ -12,6 +12,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "C:/C/git bash/1/libs/algorithms/array/array.c" "C:/C/git bash/1/cmake-build-debug/libs/algorithms/CMakeFiles/algorithms.dir/array/array.c.obj"
   "C:/C/git bash/1/libs/algorithms/array/ordered_array.c" "C:/C/git bash/1/cmake-build-debug/libs/algorithms/CMakeFiles/algorithms.dir/array/ordered_array.c.obj"
   "C:/C/git bash/1/libs/algorithms/array/unordered_array.c" "C:/C/git bash/1/cmake-build-debug/libs/algorithms/CMakeFiles/algorithms.dir/array/unordered_array.c.obj"
+  "C:/C/git bash/1/libs/algorithms/sorting/sorting.c" "C:/C/git bash/1/cmake-build-debug/libs/algorithms/CMakeFiles/algorithms.dir/sorting/sorting.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

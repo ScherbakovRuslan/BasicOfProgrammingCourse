@@ -13,3 +13,7 @@ libs/algorithms/CMakeFiles/algorithms.dir/array/unordered_array.c.obj: \
  ../libs/algorithms/array/array.h \
  ../libs/algorithms/array/unordered_array.c \
  ../libs/algorithms/array/unordered_array.h
+libs/algorithms/CMakeFiles/algorithms.dir/sorting/sorting.c.obj: \
+ ../libs/algorithms/array/array.h \
+ ../libs/algorithms/sorting/sorting.c \
+ ../libs/algorithms/sorting/sorting.h

@@ -225,6 +225,30 @@ array/unordered_array.c.s:
 	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\algorithms\CMakeFiles\algorithms.dir\build.make libs/algorithms/CMakeFiles/algorithms.dir/array/unordered_array.c.s
 .PHONY : array/unordered_array.c.s
 
+sorting/sorting.obj: sorting/sorting.c.obj
+.PHONY : sorting/sorting.obj
+
+# target to build an object file
+sorting/sorting.c.obj:
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\algorithms\CMakeFiles\algorithms.dir\build.make libs/algorithms/CMakeFiles/algorithms.dir/sorting/sorting.c.obj
+.PHONY : sorting/sorting.c.obj
+
+sorting/sorting.i: sorting/sorting.c.i
+.PHONY : sorting/sorting.i
+
+# target to preprocess a source file
+sorting/sorting.c.i:
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\algorithms\CMakeFiles\algorithms.dir\build.make libs/algorithms/CMakeFiles/algorithms.dir/sorting/sorting.c.i
+.PHONY : sorting/sorting.c.i
+
+sorting/sorting.s: sorting/sorting.c.s
+.PHONY : sorting/sorting.s
+
+# target to generate assembly for a file
+sorting/sorting.c.s:
+	cd /d C:\C\GITBAS~1\1\CMAKE-~1 && $(MAKE) $(MAKESILENT) -f libs\algorithms\CMakeFiles\algorithms.dir\build.make libs/algorithms/CMakeFiles/algorithms.dir/sorting/sorting.c.s
+.PHONY : sorting/sorting.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -246,6 +270,9 @@ help:
 	@echo ... array/unordered_array.obj
 	@echo ... array/unordered_array.i
 	@echo ... array/unordered_array.s
+	@echo ... sorting/sorting.obj
+	@echo ... sorting/sorting.i
+	@echo ... sorting/sorting.s
 .PHONY : help
 
 

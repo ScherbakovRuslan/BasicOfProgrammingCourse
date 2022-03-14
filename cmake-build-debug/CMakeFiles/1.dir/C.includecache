@@ -10,6 +10,16 @@ C:/C/git bash/1/libs/algorithms/algorithm.h
 stdlib.h
 -
 
+C:/C/git bash/1/libs/algorithms/sorting/sorting.h
+stdlib.h
+-
+stdio.h
+-
+stdbool.h
+-
+time.h
+-
+
 C:/C/git bash/1/libs/data_structures/matrix/matrix.h
 stdio.h
 -
@@ -61,4 +71,6 @@ libs/data_structures/string/string_test.h
 C:/C/git bash/1/libs/data_structures/string/string_test.h
 libs/data_structures/string/string_tasks.h
 C:/C/git bash/1/libs/data_structures/string/string_tasks.h
+libs/algorithms/sorting/sorting.h
+C:/C/git bash/1/libs/algorithms/sorting/sorting.h
 

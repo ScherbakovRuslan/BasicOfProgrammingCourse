@@ -3,6 +3,7 @@
 
 CMakeFiles/1.dir/main.c.obj: \
  ../libs/algorithms/algorithm.h \
+ ../libs/algorithms/sorting/sorting.h \
  ../libs/data_structures/matrix/matrix.h \
  ../libs/data_structures/matrix/matrixTest.h \
  ../libs/data_structures/string/string_.h \
