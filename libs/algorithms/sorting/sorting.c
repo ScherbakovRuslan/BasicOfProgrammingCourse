@@ -16,7 +16,8 @@ void timeExperiment() {
             {bubbleSort, "bubbleSort"},
             {selectionSort, "selectionSort"},
             {insertionSort, "insertionSort"},
-            {combsort, "combsort"}
+            {combsort, "combsort"},
+            {ShellSort, "ShellSort"}
     };
     const unsigned FUNCS_N = ARRAY_SIZE(sorts);
 
@@ -160,5 +161,22 @@ void combsort(int *a, const size_t size) {
                 swap(&a[i], &a[j]);
                 swapped = 1;
             }
+    }
+}
+
+void ShellSort(int *a, size_t n) {
+    int tmp, j;
+    for (int step = n / 2; step > 0; step /= 2) {
+        for (int i = step; i < n; i++) {
+            tmp = a[i];
+            for (j = i; j >= step; j -= step) {
+                if (tmp < a[j - step]) {
+                    a[j] = a[j - step];
+                } else {
+                    break;
+                }
+            }
+            a[j] = tmp;
+        }
     }
 }

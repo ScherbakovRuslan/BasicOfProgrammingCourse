@@ -64,6 +64,6 @@ int countIf_(const int *a, size_t n, int (*predicate )(int));
 // массива
 void deleteIf_(int *a, size_t *n, int (*deletePredicate )(int));
 
-bool isOrdered(int *a, size_t size);
+bool isOrdered(const int *a, size_t size);
 
 #endif
