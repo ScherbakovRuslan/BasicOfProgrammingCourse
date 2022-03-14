@@ -57,4 +57,6 @@ void selectionSort(int *a, size_t size);
 
 void insertionSort(int *a, size_t size);
 
+void combsort(int *a, size_t size);
+
 #endif //INC_1_SORTING_H

@@ -15,7 +15,8 @@ void timeExperiment() {
     SortFunc sorts[] = {
             {bubbleSort, "bubbleSort"},
             {selectionSort, "selectionSort"},
-            {insertionSort, "insertionSort"}
+            {insertionSort, "insertionSort"},
+            {combsort, "combsort"}
     };
     const unsigned FUNCS_N = ARRAY_SIZE(sorts);
 
@@ -143,5 +144,21 @@ void insertionSort(int *a, size_t size) {
             j--;
         }
         a[j] = t;
+    }
+}
+
+void combsort(int *a, const size_t size) {
+    size_t step = size;
+    int swapped = 1;
+    while (step > 1 || swapped) {
+        if (step > 1) {
+            step /= 1.24733;
+        }
+        swapped = 0;
+        for (size_t i = 0, j = i + step; j < size; ++i, ++j)
+            if (a[i] > a[j]) {
+                swap(&a[i], &a[j]);
+                swapped = 1;
+            }
     }
 }
