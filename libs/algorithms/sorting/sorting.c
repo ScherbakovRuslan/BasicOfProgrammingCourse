@@ -13,8 +13,7 @@ double getTime() {
 void timeExperiment() {
     // описание функций сортировки
     SortFunc sorts[] = {
-            {bubbleSort, "bubbleSort"}
-            // вы добавите свои сортировки
+            {selectionSort, "selectionSort"}
     };
     const unsigned FUNCS_N = ARRAY_SIZE(sorts);
 
@@ -119,5 +118,15 @@ void bubbleSort(int *a, size_t size) {
                 swap(&a[j - 1], &a[j]);
             }
         }
+    }
+}
+
+void selectionSort(int *a, size_t size) {
+    for (int i = 0; i < size - 1; i++) {
+        int minPos = i;
+        for (int j = i + 1; j < size; j++)
+            if (a[j] < a[minPos])
+                minPos = j;
+        swap(&a[i], &a[minPos]);
     }
 }
